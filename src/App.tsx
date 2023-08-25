@@ -1,7 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
-import Bracket from './components/Bracket/Bracket';
+// import './App.css';
+import React, { useState } from 'react';
+import Bracket from './components/Bracket/Bracket'
 
 function App() {
 

@@ -1,6 +1,10 @@
 import React from 'react'
 
-function Two({restaurants}) {
+export interface Props {
+  restaurants: string[]
+}
+
+function Two({restaurants}: Props) {
   return (
     <div className='round'>
       <div className='matchup-container four'>

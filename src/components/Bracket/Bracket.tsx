@@ -3,9 +3,9 @@ import './Bracket.css'
 import Sixteen from '../BracketCards/Sixteen'
 import Eight from '../BracketCards/Eight'
 import Four from '../BracketCards/Four'
-import Two from '../BracketCards/Two'
+import Two, { Props } from '../BracketCards/Two'
 
-function Bracket({restaurants}) {
+function Bracket({restaurants}: Props) {
 
   const displayBracket = () => {
     if (restaurants.length === 16) {
