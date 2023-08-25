@@ -1,6 +1,7 @@
 import React from 'react'
+import { Props } from './Two'
 
-function Four({restaurants}) {
+function Four({restaurants}: Props) {
   return (
   <>
     <div className='round'>

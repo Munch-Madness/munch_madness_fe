@@ -1,7 +1,8 @@
 import React from 'react'
 import './BracketCards.css'
+import { Props } from './Two'
 
-function Eight({restaurants}) {
+function Eight({restaurants}: Props) {
   return (
   <>
     <div className='round'>
