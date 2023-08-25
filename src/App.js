@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Bracket from './components/Bracket/Bracket';
 
 function App() {
+
+  const [restaurants, setRestaurants] = useState(['Taco Star', 'Red Lobster', 'Taco Bell', 'Cheba Hut'])
+  // 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut'
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Bracket restaurants={restaurants}/>
     </div>
   );
 }
