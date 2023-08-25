@@ -1,9 +1,4 @@
-.round {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100vh;
-}
+
 
 .matchup-container {
   display: flex;
