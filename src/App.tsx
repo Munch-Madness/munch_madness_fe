@@ -1,15 +1,18 @@
 // import './App.css';
 import React, { useState } from 'react';
 import Bracket from './components/Bracket/Bracket'
+import { BracketChoice } from './components/BracketChoice/BracketChoice';
 
 function App() {
+  const [bracketSize, setBracketSize] = useState(0)
 
-  const [restaurants, setRestaurants] = useState(['Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut'])
-  // 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut', 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut'
+
+  
   return (
-    <div className="flex flex-col justify-center items-center bg-white-400">
-      <img src='./assets/MunchMadness.PNG' alt='MunchMadness Title' className='w-72 items-center'/>
-      <Bracket restaurants={restaurants}/>
+    <div className="App flex flex-col justify-center items-center bg-background">
+      <img src='./assets/MunchMadness.PNG' alt='MunchMadness Title' className={bracketSize ? `w-36 items-center absolute top-0 right-0 md:w-72 ` : `w-36 items-center absolute top-0 md:w-96`}/>
+      {!bracketSize && <BracketChoice setBracketSize={setBracketSize}/>}
+      {bracketSize && <Bracket />}
     </div>
   );
 }

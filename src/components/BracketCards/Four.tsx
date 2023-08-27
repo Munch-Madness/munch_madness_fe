@@ -1,30 +1,81 @@
-import React from 'react'
-import { Props } from './Two'
+import React, { useState, useEffect } from 'react';
+import { PiMedalFill } from 'react-icons/pi';
 
-function Four({restaurants}: Props) {
-  return (
-  <>
-    <div className='round'>
-      <div className='matchup-container three'>
-        <p className='team'>{restaurants[0]}</p>
-        <div className='spacer'></div>
-        <p className='team'>{restaurants[3]}</p>
-      </div>
-      <div className='matchup-container three'>
-        <p className='team'>{restaurants[1]}</p>
-        <div className='spacer'></div>
-        <p className='team'>{restaurants[2]}</p>
-      </div>
-    </div>
-    <div className='round'>
-      <div className='matchup-container four'>
-        <p className='team'>TBD</p>
-        <div className='spacer'></div>
-        <p className='team'>TBD</p>
-      </div>
-    </div>
-  </>
-  )
+interface Props {
+  restaurants: string[];
+  setRound3Winners: Function;
 }
 
-export default Four
+function Four({ restaurants, setRound3Winners }: Props) {
+  const [game1Winner, setGame1Winner] = useState('TBD');
+  const [game2Winner, setGame2Winner] = useState('TBD');
+
+  useEffect(() => {
+    if (
+      game1Winner !== 'TBD' &&
+      game2Winner !== 'TBD'
+    ) {
+      setRound3Winners([
+        game1Winner,
+        game2Winner,
+    ])}
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    game1Winner,
+    game2Winner,
+  ]);
+
+  return (
+    <>
+      <div className="round">
+        <div className="matchup-container three">
+          <div className="flex justify-between items-center">
+            <PiMedalFill
+              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              onClick={() => setGame1Winner(restaurants[0])}
+            />
+            <p className="team text-primary">{restaurants[0]}</p>
+          </div>
+          <div className="spacer"></div>
+          <div className="flex justify-between items-center">
+            <PiMedalFill
+              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              onClick={() => setGame1Winner(restaurants[1])}
+            />
+            <p className="team text-primary">{restaurants[1]}</p>
+          </div>
+        </div>
+        <div className="matchup-container three">
+          <div className="flex justify-between items-center">
+            <PiMedalFill
+              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              onClick={() => setGame2Winner(restaurants[2])}
+            />
+            <p className="team text-primary">{restaurants[2]}</p>
+          </div>
+          <div className="spacer"></div>
+          <div className="flex justify-between items-center">
+            <PiMedalFill
+              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              onClick={() => setGame2Winner(restaurants[3])}
+            />
+            <p className="team text-primary">{restaurants[3]}</p>
+          </div>
+        </div>
+      </div>
+      <div className="round">
+        <div className="matchup-container four">
+          <p className={game1Winner === 'TBD' ? 'text-primary' : 'text-green'}>
+            {game1Winner}
+          </p>
+          <div className="spacer"></div>
+          <p className={game2Winner === 'TBD' ? 'text-primary' : 'text-green'}>
+            {game2Winner}
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Four;
