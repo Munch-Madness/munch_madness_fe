@@ -4,9 +4,13 @@ import Eight from '../BracketCards/Eight';
 import Four from '../BracketCards/Four';
 import Two from '../BracketCards/Two';
 
-function Bracket() {
+interface Props {
+  setBracketSize: Function;
+}
+
+function Bracket({setBracketSize}: Props) {
   const [restaurants, setRestaurants] = useState([
-    'Applebees',
+    'Omakase',
     'Freebirds',
     'Wendys',
     'Dennys',
@@ -18,7 +22,7 @@ function Bracket() {
     'Taco Star',
     'Red Robin',
     'Red Lobster',
-    'McDonalds',
+    'Ruths Chris',
     'Burgerville',
     'iHop',
     'Cheba Hut',
@@ -61,7 +65,10 @@ function Bracket() {
     } else if (restaurants.length === 2) {
       return <Two restaurants={restaurants} setWinner={setWinner} />;
     } else if (restaurants.length === 1) {
-      return <h1 className='text-4xl text-green text-center'>{winner}</h1>;
+      return <div className='flex flex-col'>
+        <h1 className='text-4xl text-green text-center'>{winner}</h1>
+        <button className='text-green border rounded p-2 m-4 hover:bg-green hover:text-background transition duration-250' onClick={() => setBracketSize(0)}>Go Again?</button>
+      </div>;
     }
   };
 
