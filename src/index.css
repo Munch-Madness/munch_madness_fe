@@ -2,9 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body, #root, .App {
+  min-height: 100vh;
+}
 .round {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
+  height: 90vh;
+}
+
+.matchup-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 10%;
+  width: 100px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.two {
+  height: 18%;
+  width: 100px;
+}
+
+.three {
+  height: 35%;
+  width: 100px;
+}
+
+.four {
+  height: 73%;
+  width: 100px;
+}
+
+.spacer {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 70%;
+  width: 100%;
+  border-color: whitesmoke;
+}
+
+.team {
+  margin: 0;
 }

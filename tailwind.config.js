@@ -2,6 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
+    colors: {
+      transparent: "transparent",
+      current: "currentColor",
+      background: "#000000",
+      primary: "#ffffff",
+      green: "#00ff00",
+      magenta: "#ff00ff",
+    },
     extend: {},
   },
   plugins: [],

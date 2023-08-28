@@ -588,31 +588,25 @@ video {
   display: flex;
 }
 
+.w-72 {
+  width: 18rem;
+}
+
 .flex-col {
   flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
 }
 
 .justify-center {
   justify-content: center;
 }
 
-.bg-gray-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
 .round {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 100vh;
+  height: 90vh;
 }
