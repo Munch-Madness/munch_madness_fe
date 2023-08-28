@@ -1,8 +1,5 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
 
-# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
-# See: https://circleci.com/docs/orb-intro/
 orbs:
   node: circleci/node@4.7
   cypress: cypress-io/cypress@3.1.3
@@ -12,27 +9,25 @@ jobs:
     executor: node/default
     steps:
       - checkout
-      - node/install-packages: #If you are using Yarn change this to Yarn
+      - node/install-packages: 
           pkg-manager: npm
       - run : 
           name : Run build
-          command: npm run build #If you are using Yarn change this to Yarn
+          command: npm run build 
       - persist_to_workspace:
           root: ~/project
           paths:
             - .
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  test_my_app: //just an inconsequential name
+  test_my_app: 
     jobs:
       - cypress/run:
-          start-command: 'npm run start' //starts a server in the circleCI env
-          cypress-command: 'npx cypress run' //runs your e2e tests
-      - build //runs the build job
-      - deploy: //runs the deploy job
+          start-command: 'npm run start' 
+          cypress-command: 'npx cypress run' 
+      - build 
+      - deploy: 
           requires:
-            - build //deploys only after the build
+            - build
           filters:
             branches:
-              only: main # only deploy when on main
+              only: main
