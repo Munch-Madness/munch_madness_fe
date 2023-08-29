@@ -2,10 +2,11 @@
 import React, { useState } from 'react';
 import Bracket from './components/Bracket/Bracket'
 import { BracketChoice } from './components/BracketChoice/BracketChoice';
+import getData from './components/apiCalls';
 
 function App() {
   const [bracketSize, setBracketSize] = useState(0)
-
+  console.log(getData)
 
   
   return (
