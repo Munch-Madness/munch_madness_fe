@@ -11,7 +11,7 @@ interface Props {
 export default function SelectMenu({allRestaurants, setRestaurants, restaurants, setSelected, bracketSize}: Props) {
 
   const options = allRestaurants.sort().map(restaurant => (
-    <li key={restaurant} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant} <span>{restaurants.includes(restaurant) ? <span className='remove' id={restaurant} onClick={selectRestaurant}>❌</span> : <span className='add' id={restaurant} onClick={selectRestaurant}>✅</span>}</span></li>
+    <li key={restaurant} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant} <span>{restaurants.includes(restaurant) ? <span className='remove' id={restaurant} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant} onClick={selectRestaurant}>⚪️</span>}</span></li>
   ))
 
   function selectRestaurant(event: any) {
