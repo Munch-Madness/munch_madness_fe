@@ -8,9 +8,10 @@ interface Props {
   setBracketSize: Function;
   restaurants: string[];
   setRestaurants: Function;
+  setSelected: Function;
 }
 
-function Bracket({setBracketSize, restaurants, setRestaurants}: Props) {
+function Bracket({setBracketSize, restaurants, setRestaurants, setSelected}: Props) {
   // const [restaurants, setRestaurants] = useState([
   //   'Omakase',
   //   'Freebirds',
@@ -52,6 +53,12 @@ function Bracket({setBracketSize, restaurants, setRestaurants}: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round1Winners, round2Winners, round3Winners, winner]);
 
+  const resetGame = () => {
+    setBracketSize(0)
+    setRestaurants([])
+    setSelected(false)
+  }
+
   const displayBracket = () => {
     if (restaurants.length === 16) {
       return (
@@ -69,7 +76,7 @@ function Bracket({setBracketSize, restaurants, setRestaurants}: Props) {
     } else if (restaurants.length === 1) {
       return <div className='flex flex-col'>
         <h1 className='text-4xl text-green text-center'>{winner}</h1>
-        <button className='text-green border rounded p-2 m-4 hover:bg-green hover:text-background transition duration-250' onClick={() => setBracketSize(0)}>Go Again?</button>
+        <button className='text-green border rounded p-2 m-4 hover:bg-green hover:text-background transition duration-250' onClick={() => resetGame()}>Go Again?</button>
       </div>;
     }
   };
