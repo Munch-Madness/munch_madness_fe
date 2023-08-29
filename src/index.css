@@ -77,3 +77,6 @@ html, body, #root, .App {
   background: white
 }
 
+.red {
+  color: red;
+}

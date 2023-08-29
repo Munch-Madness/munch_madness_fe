@@ -36,9 +36,10 @@ export default function SelectMenu({allRestaurants, setRestaurants, restaurants,
   return (
     <div className='list'>
       <div className='flex justify-between w-full self-start'>
-        <button className='text-green text-xl mb-10 p-2 border rounded-lg' onClick={() => setBracketSize(0)}>Go Back</button>
-        <button className='text-green text-xl mb-10 border p-2 rounded-lg' onClick={random}>Randomize</button>
+        <button className='text-green text-xl p-2 border rounded-lg mb-5' onClick={() => setBracketSize(0)}>Go Back</button>
+        <button className='text-green text-xl border p-2 rounded-lg mb-5' onClick={random}>Randomize</button>
       </div>
+      {restaurants.length !== bracketSize && <p className='text-primary mb-5 self-start red'>select {bracketSize - restaurants.length} more restaurants</p>}
       <ul className='select'>
         {options}
       </ul>
