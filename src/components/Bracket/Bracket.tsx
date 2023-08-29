@@ -6,27 +6,29 @@ import Two from '../BracketCards/Two';
 
 interface Props {
   setBracketSize: Function;
+  restaurants: string[];
+  setRestaurants: Function;
 }
 
-function Bracket({setBracketSize}: Props) {
-  const [restaurants, setRestaurants] = useState([
-    'Omakase',
-    'Freebirds',
-    'Wendys',
-    'Dennys',
-    'McDonalds',
-    'Taco Bell',
-    'Burger King',
-    'Chipotle',
-    'Applebees',
-    'Taco Star',
-    'Red Robin',
-    'Red Lobster',
-    'Ruths Chris',
-    'Burgerville',
-    'iHop',
-    'Cheba Hut',
-  ]);
+function Bracket({setBracketSize, restaurants, setRestaurants}: Props) {
+  // const [restaurants, setRestaurants] = useState([
+  //   'Omakase',
+  //   'Freebirds',
+  //   'Wendys',
+  //   'Dennys',
+  //   'McDonalds',
+  //   'Taco Bell',
+  //   'Burger King',
+  //   'Chipotle',
+  //   'Applebees',
+  //   'Taco Star',
+  //   'Red Robin',
+  //   'Red Lobster',
+  //   'Ruths Chris',
+  //   'Burgerville',
+  //   'iHop',
+  //   'Cheba Hut',
+  // ]);
   // 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut', 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut'
   //fetch will go here and use setRestaurants to set the state of the restaurants array and use bracketSize to fetch the right number of restaurants
   const [round1Winners, setRound1Winners] = useState([]);
