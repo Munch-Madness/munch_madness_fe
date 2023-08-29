@@ -50,3 +50,29 @@ html, body, #root, .App {
   margin: 0;
 }
 
+.select {
+  color: white;
+  font-size: xx-large;
+  margin-top: 180px;
+  height: 375px;
+  overflow-y: scroll;
+  width: 100%;
+  /* border: 1px solid white; */
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  align-items: center;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white
+}
+
