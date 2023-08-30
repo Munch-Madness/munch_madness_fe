@@ -15,8 +15,8 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
   const [searchParams, setSearchParams] = useState('')
 
   const restaurantOptions = searchParams ? fetchedRestaurants.filter((restaurant, index) => restaurant.attributes.name.toLowerCase().includes(searchParams.toLowerCase())).sort() : fetchedRestaurants.sort()
-  const displayRestaurants = restaurantOptions.map(restaurant => (
-    <li key={restaurant.attributes.name} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.includes(restaurant.attributes.name) ? <span className='remove' id={restaurant.attributes.name} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant.attributes.name} onClick={selectRestaurant}>⚪️</span>}</span></li>
+  const displayRestaurants = restaurantOptions.map((restaurant, index) => (
+    <li key={index} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.includes(restaurant.attributes.name) ? <span className='remove' id={restaurant.attributes.name} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant.attributes.name} onClick={selectRestaurant}>⚪️</span>}</span></li>
   ))
 
   function selectRestaurant(event: any) {
