@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 interface Props {
   fetchedRestaurants: string[];
@@ -11,7 +11,11 @@ interface Props {
 
 export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, bracketRestaurants, setReadyToPlay, bracketSize, setBracketSize}: Props) {
 
-  const options = fetchedRestaurants.sort().map(restaurant => (
+
+  const [searchParams, setSearchParams] = useState('')
+
+  const restaurantOptions = searchParams ? fetchedRestaurants.filter(restaurant => restaurant.toLowerCase().includes(searchParams.toLowerCase())).sort() : fetchedRestaurants.sort()
+  const displayRestaurants = restaurantOptions.map(restaurant => (
     <li key={restaurant} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant} <span>{bracketRestaurants.includes(restaurant) ? <span className='remove' id={restaurant} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant} onClick={selectRestaurant}>⚪️</span>}</span></li>
   ))
 
@@ -36,16 +40,21 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
     setBracketSize(0)
     setBracketRestaurants([])
   }
+
+  function searchRestaurants(event: any) {
+    setSearchParams(event.target.value)
+  }
   
   return (
     <div className='list'>
       <div className='flex justify-between w-full self-start'>
         <button className='text-green text-xl p-2 border rounded-lg mb-5' onClick={goBack}>Go Back</button>
+        <input value={searchParams} type='text' placeholder='Search Restaurants' className='h-10 pl-2' onChange={searchRestaurants}></input>
         <button className='text-green text-xl border p-2 rounded-lg mb-5' onClick={random}>Randomize</button>
       </div>
       {bracketRestaurants.length !== bracketSize && <p className='text-primary mb-5 self-start red'>select {bracketSize - bracketRestaurants.length} more restaurants</p>}
       <ul className='select'>
-        {options}
+        {displayRestaurants}
       </ul>
       {bracketRestaurants.length === bracketSize && <button onClick={() => setReadyToPlay(true)} className='text-green mt-3 text-2xl border p-2 rounded-lg'>Let's Play!</button>}
     </div>
