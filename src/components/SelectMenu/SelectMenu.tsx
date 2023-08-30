@@ -47,16 +47,16 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
   
   return (
     <div className='list'>
-      <div className='flex justify-between w-full self-start'>
-        <button className='text-green text-xl p-2 border rounded-lg mb-5' onClick={goBack}>Go Back</button>
-        <input value={searchParams} type='text' placeholder='Search Restaurants' className='h-10 pl-2' onChange={searchRestaurants}></input>
-        <button className='text-green text-xl border p-2 rounded-lg mb-5' onClick={random}>Randomize</button>
+      <div className='flex justify-between w-full self-start mb-5'>
+        <button className='text-green text-lg p-2 border rounded-lg hover:bg-green hover:text-background transition duration-250' onClick={goBack}>Go Back</button>
+        <input value={searchParams} type='text' placeholder='Search Restaurants' className='h-10 pl-2 rounded-lg text-lg' onChange={searchRestaurants}></input>
+        <button className='text-green text-lg border p-2 rounded-lg hover:bg-green hover:text-background transition duration-250' onClick={random}>Randomize</button>
       </div>
       {bracketRestaurants.length !== bracketSize && <p className='text-primary mb-5 self-start red'>select {bracketSize - bracketRestaurants.length} more restaurants</p>}
       <ul className='select'>
         {displayRestaurants}
       </ul>
-      {bracketRestaurants.length === bracketSize && <button onClick={() => setReadyToPlay(true)} className='text-green mt-3 text-2xl border p-2 rounded-lg'>Let's Play!</button>}
+      {bracketRestaurants.length === bracketSize && <button onClick={() => setReadyToPlay(true)} className='text-green mt-3 text-lg border p-2 rounded-lg hover:bg-green hover:text-background transition duration-250'>Let's Play!</button>}
     </div>
   )
 }
