@@ -36,6 +36,7 @@ console.log(restaurants)
       {!bracketSize && <BracketChoice setBracketSize={setBracketSize}/>}
       {bracketSize && !selected && <SelectMenu allRestaurants={allRestaurants} setRestaurants={setRestaurants} restaurants={restaurants} setSelected={setSelected} bracketSize={bracketSize} setBracketSize={setBracketSize}/>}
       {selected && <Bracket setBracketSize={setBracketSize} restaurants={restaurants} setRestaurants={setRestaurants} setSelected={setSelected}/>}
+      {error && <ErrorMessage message={error}/>}
     </div>
   );
   }
