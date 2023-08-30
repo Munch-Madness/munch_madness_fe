@@ -1,10 +1,12 @@
-// import './App.css';
 import React, { useState } from 'react';
 import Bracket from './components/Bracket/Bracket'
 import { BracketChoice } from './components/BracketChoice/BracketChoice';
 import SelectMenu from './components/SelectMenu/SelectMenu';
+import getData from './components/apiCalls';
+import ErrorMessage from './components/error';
 
 function App() {
+  const [error, setError] = useState(null)
   const [bracketSize, setBracketSize] = useState(0)
   const [fetchedRestaurants, setFetchedRestaurants] = useState([
   'Omakase',
@@ -27,7 +29,7 @@ function App() {
   const [bracketRestaurants, setBracketRestaurants] = useState([]);
   const [selected, setSelected] = useState(false)
 console.log(bracketRestaurants)
-  
+// console.log(getData())  
   return (
     <div className="App flex flex-col justify-center items-center bg-background">
       <img src='./assets/MunchMadness.PNG' alt='MunchMadness Title' className={selected ? `w-36 items-center absolute top-0 right-0 md:w-72 ` : `w-36 items-center absolute top-0 md:w-96`}/>
