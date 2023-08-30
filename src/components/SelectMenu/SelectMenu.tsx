@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 interface Props {
-  fetchedRestaurants: string[];
+  fetchedRestaurants: {attributes:{name: string}}[];
   setBracketRestaurants: Function;
   bracketRestaurants: string[];
   setReadyToPlay: Function;
@@ -14,9 +14,9 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
 
   const [searchParams, setSearchParams] = useState('')
 
-  const restaurantOptions = searchParams ? fetchedRestaurants.filter((restaurant, index) => restaurant.toLowerCase().includes(searchParams.toLowerCase())).sort() : fetchedRestaurants.sort()
+  const restaurantOptions = searchParams ? fetchedRestaurants.filter((restaurant, index) => restaurant.attributes.name.toLowerCase().includes(searchParams.toLowerCase())).sort() : fetchedRestaurants.sort()
   const displayRestaurants = restaurantOptions.map(restaurant => (
-    <li key={Date.now()} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant} <span>{bracketRestaurants.includes(restaurant) ? <span className='remove' id={restaurant} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant} onClick={selectRestaurant}>⚪️</span>}</span></li>
+    <li key={restaurant.attributes.name} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.includes(restaurant.attributes.name) ? <span className='remove' id={restaurant.attributes.name} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant.attributes.name} onClick={selectRestaurant}>⚪️</span>}</span></li>
   ))
 
   function selectRestaurant(event: any) {

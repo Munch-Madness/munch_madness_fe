@@ -8,26 +8,26 @@ import ErrorMessage from './components/error';
 function App() {
   const [error, setError] = useState("")
   const [bracketSize, setBracketSize] = useState(0)
-  const [fetchedRestaurants, setFetchedRestaurants] = useState([""])
+  const [fetchedRestaurants, setFetchedRestaurants] = useState([])
   const [bracketRestaurants, setBracketRestaurants] = useState([]);
   const [readyToPlay, setReadyToPlay] = useState(false)
 
   useEffect(() => {
     fetch("https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/?query=80214&search=random")
     .then(response => {
-      console.log(response.json)
       if (!response.ok) {
         throw new Error("Problem with Network");
       }
       return response.json();
     })
     .then(data => {
+      console.log(data.data[0].attributes.name)
       setFetchedRestaurants(data.data);
     })
     // .then(data => console.log(data))
     .catch(error => console.error(error));
   }, []);
-
+console.log(fetchedRestaurants, "fetched")
  
   return (
     <div className="App flex flex-col justify-center items-center bg-background">
