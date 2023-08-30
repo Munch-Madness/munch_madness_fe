@@ -4,12 +4,12 @@ interface Props {
   fetchedRestaurants: string[];
   setBracketRestaurants: Function;
   bracketRestaurants: string[];
-  setSelected: Function;
+  setReadyToPlay: Function;
   bracketSize: number;
   setBracketSize:Function;
 }
 
-export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, bracketRestaurants, setSelected, bracketSize, setBracketSize}: Props) {
+export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, bracketRestaurants, setReadyToPlay, bracketSize, setBracketSize}: Props) {
 
   const options = fetchedRestaurants.sort().map(restaurant => (
     <li key={restaurant} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant} <span>{bracketRestaurants.includes(restaurant) ? <span className='remove' id={restaurant} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant} onClick={selectRestaurant}>⚪️</span>}</span></li>
@@ -47,7 +47,7 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
       <ul className='select'>
         {options}
       </ul>
-      {bracketRestaurants.length === bracketSize && <button onClick={() => setSelected(true)} className='text-green mt-3 text-2xl border p-2 rounded-lg'>Let's Play!</button>}
+      {bracketRestaurants.length === bracketSize && <button onClick={() => setReadyToPlay(true)} className='text-green mt-3 text-2xl border p-2 rounded-lg'>Let's Play!</button>}
     </div>
   )
 }

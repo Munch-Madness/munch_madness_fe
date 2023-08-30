@@ -8,10 +8,10 @@ interface Props {
   setBracketSize: Function;
   bracketRestaurants: string[];
   setBracketRestaurants: Function;
-  setSelected: Function;
+  setReadyToPlay: Function;
 }
 
-function Bracket({setBracketSize, bracketRestaurants, setBracketRestaurants, setSelected}: Props) {
+function Bracket({setBracketSize, bracketRestaurants, setBracketRestaurants, setReadyToPlay}: Props) {
   // const [bracketRestaurants, setBracketRestaurants] = useState([
   //   'Omakase',
   //   'Freebirds',
@@ -56,7 +56,7 @@ function Bracket({setBracketSize, bracketRestaurants, setBracketRestaurants, set
   const resetGame = () => {
     setBracketSize(0)
     setBracketRestaurants([])
-    setSelected(false)
+    setReadyToPlay(false)
   }
 
   const displayBracket = () => {
