@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import Bracket from './components/Bracket/Bracket'
 import { BracketChoice } from './components/BracketChoice/BracketChoice';
 import SelectMenu from './components/SelectMenu/SelectMenu';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import getData from './components/apiCalls';
 import ErrorMessage from './components/error';
 
 function App() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [error, setError] = useState(null)
   const [bracketSize, setBracketSize] = useState(0)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [fetchedRestaurants, setFetchedRestaurants] = useState([
   'Omakase',
   'Freebirds',
