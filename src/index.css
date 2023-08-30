@@ -53,18 +53,19 @@ html, body, #root, .App {
 .select {
   color: white;
   font-size: xx-large;
-  margin-top: 180px;
-  height: 375px;
+  height: 350px;
   overflow-y: scroll;
   width: 100%;
-  /* border: 1px solid white; */
+
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 600px;
+  /* min-width: 320px; */
   align-items: center;
+  margin-top: 15%;
 }
 
 ::-webkit-scrollbar {
@@ -76,3 +77,21 @@ html, body, #root, .App {
   background: white
 }
 
+.red {
+  color: red;
+}
+
+.search {
+  width: 300px
+}
+
+@media screen and (max-width: 768px) {
+  .list {
+    width: 320px
+  }
+
+  .search {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+}

@@ -6,13 +6,13 @@ import Two from '../BracketCards/Two';
 
 interface Props {
   setBracketSize: Function;
-  restaurants: string[];
-  setRestaurants: Function;
-  setSelected: Function;
+  bracketRestaurants: string[];
+  setBracketRestaurants: Function;
+  setReadyToPlay: Function;
 }
 
-function Bracket({setBracketSize, restaurants, setRestaurants, setSelected}: Props) {
-  // const [restaurants, setRestaurants] = useState([
+function Bracket({setBracketSize, bracketRestaurants, setBracketRestaurants, setReadyToPlay}: Props) {
+  // const [bracketRestaurants, setBracketRestaurants] = useState([
   //   'Omakase',
   //   'Freebirds',
   //   'Wendys',
@@ -31,7 +31,7 @@ function Bracket({setBracketSize, restaurants, setRestaurants, setSelected}: Pro
   //   'Cheba Hut',
   // ]);
   // 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut', 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut'
-  //fetch will go here and use setRestaurants to set the state of the restaurants array and use bracketSize to fetch the right number of restaurants
+  //fetch will go here and use setBracketRestaurants to set the state of the bracketRestaurants array and use bracketSize to fetch the right number of bracketRestaurants
   const [round1Winners, setRound1Winners] = useState([]);
   const [round2Winners, setRound2Winners] = useState([]);
   const [round3Winners, setRound3Winners] = useState([]);
@@ -39,41 +39,41 @@ function Bracket({setBracketSize, restaurants, setRestaurants, setSelected}: Pro
 
   useEffect(() => {
     if (round1Winners.length === 8) {
-      setRestaurants(round1Winners);
+      setBracketRestaurants(round1Winners);
     }
     if (round2Winners.length === 4) {
-      setRestaurants(round2Winners);
+      setBracketRestaurants(round2Winners);
     }
     if (round3Winners.length === 2) {
-      setRestaurants(round3Winners);
+      setBracketRestaurants(round3Winners);
     }
     if (winner !== '') {
-      setRestaurants([winner]);
+      setBracketRestaurants([winner]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round1Winners, round2Winners, round3Winners, winner]);
 
   const resetGame = () => {
     setBracketSize(0)
-    setRestaurants([])
-    setSelected(false)
+    setBracketRestaurants([])
+    setReadyToPlay(false)
   }
 
   const displayBracket = () => {
-    if (restaurants.length === 16) {
+    if (bracketRestaurants.length === 16) {
       return (
         <Sixteen
-          restaurants={restaurants}
+          bracketRestaurants={bracketRestaurants}
           setRound1Winners={setRound1Winners}
         />
       );
-    } else if (restaurants.length === 8) {
-      return <Eight restaurants={restaurants} setRound2Winners={setRound2Winners} />;
-    } else if (restaurants.length === 4) {
-      return <Four restaurants={restaurants} setRound3Winners={setRound3Winners} />;
-    } else if (restaurants.length === 2) {
-      return <Two restaurants={restaurants} setWinner={setWinner} />;
-    } else if (restaurants.length === 1) {
+    } else if (bracketRestaurants.length === 8) {
+      return <Eight bracketRestaurants={bracketRestaurants} setRound2Winners={setRound2Winners} />;
+    } else if (bracketRestaurants.length === 4) {
+      return <Four bracketRestaurants={bracketRestaurants} setRound3Winners={setRound3Winners} />;
+    } else if (bracketRestaurants.length === 2) {
+      return <Two bracketRestaurants={bracketRestaurants} setWinner={setWinner} />;
+    } else if (bracketRestaurants.length === 1) {
       return <div className='flex flex-col'>
         <h1 className='text-4xl text-green text-center'>{winner}</h1>
         <button className='text-green border rounded p-2 m-4 hover:bg-green hover:text-background transition duration-250' onClick={() => resetGame()}>Go Again?</button>
@@ -83,7 +83,7 @@ function Bracket({setBracketSize, restaurants, setRestaurants, setSelected}: Pro
 
   return (
     <div className="flex justify-center p-2 h-full">
-      {restaurants.length > 0 ? displayBracket() : 'No Bracket Set'}
+      {bracketRestaurants.length > 0 ? displayBracket() : 'No Bracket Set'}
     </div>
   );
 }

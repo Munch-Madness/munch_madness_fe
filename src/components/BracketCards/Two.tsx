@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { PiMedalFill } from 'react-icons/pi';
 
 interface Props {
-  restaurants: string[];
+  bracketRestaurants: string[];
   setWinner: Function;
 }
 
-function Two({ restaurants, setWinner }: Props) {
+function Two({ bracketRestaurants, setWinner }: Props) {
   const [game1Winner, setGame1Winner] = useState('TBD');
 
   useEffect(() => {
@@ -22,17 +22,17 @@ function Two({ restaurants, setWinner }: Props) {
         <div className="flex justify-between items-center">
           <PiMedalFill
             className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-            onClick={() => setGame1Winner(restaurants[0])}
+            onClick={() => setGame1Winner(bracketRestaurants[0])}
           />
-          <p className="team text-primary">{restaurants[0]}</p>
+          <p className="team text-primary">{bracketRestaurants[0]}</p>
         </div>
         <div className="spacer"></div>
         <div className="flex justify-between items-center">
           <PiMedalFill
             className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-            onClick={() => setGame1Winner(restaurants[1])}
+            onClick={() => setGame1Winner(bracketRestaurants[1])}
           />
-          <p className="team text-primary">{restaurants[1]}</p>
+          <p className="team text-primary">{bracketRestaurants[1]}</p>
         </div>
       </div>
     </div>
