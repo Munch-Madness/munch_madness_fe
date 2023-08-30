@@ -9,6 +9,7 @@ module.exports = {
       primary: "#ffffff",
       green: "#00ff00",
       magenta: "#ff00ff",
+      red: "#ff0000",
     },
     extend: {},
   },
