@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { PiMedalFill } from 'react-icons/pi';
 interface Props {
-  restaurants: string[];
+  bracketRestaurants: string[];
   setRound2Winners: Function;
 }
 
-function Eight({ restaurants, setRound2Winners }: Props) {
+function Eight({ bracketRestaurants, setRound2Winners }: Props) {
   const [game1Winner, setGame1Winner] = useState('TBD');
   const [game2Winner, setGame2Winner] = useState('TBD');
   const [game3Winner, setGame3Winner] = useState('TBD');
@@ -40,68 +40,68 @@ function Eight({ restaurants, setRound2Winners }: Props) {
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame1Winner(restaurants[0])}
+              onClick={() => setGame1Winner(bracketRestaurants[0])}
             />
-            <p className="team text-primary">{restaurants[0]}</p>
+            <p className="team text-primary">{bracketRestaurants[0]}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame1Winner(restaurants[1])}
+              onClick={() => setGame1Winner(bracketRestaurants[1])}
             />
-            <p className="team text-primary">{restaurants[1]}</p>
+            <p className="team text-primary">{bracketRestaurants[1]}</p>
           </div>
         </div>
         <div className="matchup-container two">
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame2Winner(restaurants[2])}
+              onClick={() => setGame2Winner(bracketRestaurants[2])}
             />
-            <p className="team text-primary">{restaurants[2]}</p>
+            <p className="team text-primary">{bracketRestaurants[2]}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame2Winner(restaurants[3])}
+              onClick={() => setGame2Winner(bracketRestaurants[3])}
             />
-            <p className="team text-primary">{restaurants[3]}</p>
+            <p className="team text-primary">{bracketRestaurants[3]}</p>
           </div>
         </div>
         <div className="matchup-container two">
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame3Winner(restaurants[4])}
+              onClick={() => setGame3Winner(bracketRestaurants[4])}
             />
-            <p className="team text-primary">{restaurants[4]}</p>
+            <p className="team text-primary">{bracketRestaurants[4]}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame3Winner(restaurants[5])}
+              onClick={() => setGame3Winner(bracketRestaurants[5])}
             />
-            <p className="team text-primary">{restaurants[5]}</p>
+            <p className="team text-primary">{bracketRestaurants[5]}</p>
           </div>
         </div>
         <div className="matchup-container two">
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame4Winner(restaurants[6])}
+              onClick={() => setGame4Winner(bracketRestaurants[6])}
             />
-            <p className="team text-primary">{restaurants[6]}</p>
+            <p className="team text-primary">{bracketRestaurants[6]}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
-              onClick={() => setGame4Winner(restaurants[7])}
+              onClick={() => setGame4Winner(bracketRestaurants[7])}
             />
-            <p className="team text-primary">{restaurants[7]}</p>
+            <p className="team text-primary">{bracketRestaurants[7]}</p>
           </div>
         </div>
       </div>

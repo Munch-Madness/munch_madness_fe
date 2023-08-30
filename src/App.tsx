@@ -6,7 +6,7 @@ import SelectMenu from './components/SelectMenu/SelectMenu';
 
 function App() {
   const [bracketSize, setBracketSize] = useState(0)
-  const [allRestaurants, setAllRestaurants] = useState([
+  const [fetchedRestaurants, setFetchedRestaurants] = useState([
   'Omakase',
   'Freebirds',
   'Wendys',
@@ -24,16 +24,16 @@ function App() {
   'iHop',
   'Cheba Hut'
 ])
-  const [restaurants, setRestaurants] = useState([]);
+  const [bracketRestaurants, setBracketRestaurants] = useState([]);
   const [selected, setSelected] = useState(false)
-console.log(restaurants)
+console.log(bracketRestaurants)
   
   return (
     <div className="App flex flex-col justify-center items-center bg-background">
       <img src='./assets/MunchMadness.PNG' alt='MunchMadness Title' className={selected ? `w-36 items-center absolute top-0 right-0 md:w-72 ` : `w-36 items-center absolute top-0 md:w-96`}/>
       {!bracketSize && <BracketChoice setBracketSize={setBracketSize}/>}
-      {bracketSize && !selected && <SelectMenu allRestaurants={allRestaurants} setBracketSize={setBracketSize} setRestaurants={setRestaurants} restaurants={restaurants} setSelected={setSelected} bracketSize={bracketSize}/>}
-      {selected && <Bracket setBracketSize={setBracketSize} restaurants={restaurants} setRestaurants={setRestaurants} setSelected={setSelected} />}
+      {bracketSize && !selected && <SelectMenu fetchedRestaurants={fetchedRestaurants} setBracketSize={setBracketSize} setBracketRestaurants={setBracketRestaurants} bracketRestaurants={bracketRestaurants} setSelected={setSelected} bracketSize={bracketSize}/>}
+      {selected && <Bracket setBracketSize={setBracketSize} bracketRestaurants={bracketRestaurants} setBracketRestaurants={setBracketRestaurants} setSelected={setSelected} />}
     </div>
   );
   }
