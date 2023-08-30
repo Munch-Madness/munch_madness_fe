@@ -47,9 +47,9 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
   
   return (
     <div className='list'>
+      <input value={searchParams} type='text' placeholder='Search Restaurants' className='h-10 pl-2 -mb-10 rounded-lg text-lg search' onChange={searchRestaurants}></input>
       <div className='flex justify-between w-full self-start mb-5'>
         <button className='text-green text-lg p-2 border rounded-lg hover:bg-green hover:text-background transition duration-250' onClick={goBack}>Go Back</button>
-        <input value={searchParams} type='text' placeholder='Search Restaurants' className='h-10 pl-2 rounded-lg text-lg' onChange={searchRestaurants}></input>
         <button className='text-green text-lg border p-2 rounded-lg hover:bg-green hover:text-background transition duration-250' onClick={random}>Randomize</button>
       </div>
       {bracketRestaurants.length !== bracketSize && <p className='text-primary mb-5 self-start red'>select {bracketSize - bracketRestaurants.length} more restaurants</p>}
