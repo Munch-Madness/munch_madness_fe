@@ -65,7 +65,7 @@ html, body, #root, .App {
   width: 600px;
   /* min-width: 320px; */
   align-items: center;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 ::-webkit-scrollbar {
