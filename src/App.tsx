@@ -1,38 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Bracket from './components/Bracket/Bracket'
 import { BracketChoice } from './components/BracketChoice/BracketChoice';
 import SelectMenu from './components/SelectMenu/SelectMenu';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import getData from './components/apiCalls';
+// import getData from './components/apiCalls';
 import ErrorMessage from './components/error';
 
 function App() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [error, setError] = useState(null)
-  const [bracketSize, setBracketSize] = useState(0)
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [fetchedRestaurants, setFetchedRestaurants] = useState([
-  'Omakase',
-  'Freebirds',
-  'Wendys',
-  'Dennys',
-  'McDonalds',
-  'Taco Bell',
-  'Burger King',
-  'Chipotle',
-  'Applebees',
-  'Taco Star',
-  'Red Robin',
-  'Red Lobster',
-  'Ruths Chris',
-  'Burgerville',
-  'iHop',
-  'Cheba Hut'
-])
-  const [bracketRestaurants, setBracketRestaurants] = useState([]);
-  const [readyToPlay, setReadyToPlay] = useState(false)
-console.log(bracketRestaurants)
-// console.log(getData())  
+  const [error, setError] = useState("")
+  const [bracketSize, setBracketSize]:any = useState(0)
+  const [fetchedRestaurants, setFetchedRestaurants]:any = useState([])
+  const [bracketRestaurants, setBracketRestaurants]:any = useState([]);
+  const [readyToPlay, setReadyToPlay]:any = useState(false)
+
+  useEffect(() => {
+    fetch("https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/?query=80214&search=random")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Problem with Network");
+      }
+      return response.json();
+    })
+    .then(data => {
+      setFetchedRestaurants(data.data);
+    })
+    .catch(error => setError(error.message));
+  }, []);
+console.log(fetchedRestaurants, "fetched")
+console.log(bracketRestaurants, "bracket")
+ 
   return (
     <div className="App flex flex-col justify-center items-center bg-background">
       <img src='./assets/MunchMadness.PNG' alt='MunchMadness Title' className={readyToPlay ? `w-36 items-center absolute top-0 right-0 md:w-72 ` : `w-36 items-center absolute top-0 md:w-96`}/>
@@ -42,6 +37,6 @@ console.log(bracketRestaurants)
       {error && <ErrorMessage message={error}/>}
     </div>
   );
-  }
+}
 
 export default App;
