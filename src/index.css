@@ -52,17 +52,24 @@ html, body, #root, .App {
 
 .select {
   color: white;
-  font-size: xx-large;
+  font-size: x-large;
   height: 350px;
   overflow-y: scroll;
   width: 100%;
+}
 
+li {
+  border: 1px solid grey;
+  border-radius: 3px;
+  margin: 5px 0;
+  padding: 0 5px;
+  width: 99%
 }
 
 .list {
   display: flex;
   flex-direction: column;
-  width: 600px;
+  width: 750px;
   /* min-width: 320px; */
   align-items: center;
   margin-top: 15%;
