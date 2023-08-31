@@ -7,22 +7,22 @@ interface Props {
 }
 
 function Four({ bracketRestaurants, setRound3Winners }: Props) {
-  const [game1Winner, setGame1Winner]:any = useState('TBD');
-  const [game2Winner, setGame2Winner]:any = useState('TBD');
+  const [game2winner, setGame2Winner] = useState<string | {attributes:{name: string}}>('TBD');
+  const [game1winner, setGame1Winner] = useState<string | {attributes:{name: string}}>('TBD');
 
   useEffect(() => {
     if (
-      game1Winner !== 'TBD' &&
-      game2Winner !== 'TBD'
+      game1winner !== 'TBD' &&
+      game2winner !== 'TBD'
     ) {
       setRound3Winners([
-        game1Winner,
-        game2Winner,
+        game1winner,
+        game2winner,
     ])}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    game1Winner,
-    game2Winner,
+    game1winner,
+    game2winner,
   ]);
 
   return (
@@ -65,13 +65,9 @@ function Four({ bracketRestaurants, setRound3Winners }: Props) {
       </div>
       <div className="round">
         <div className="matchup-container four">
-          <p className={game1Winner === 'TBD' ? 'text-primary' : 'text-green'}>
-            {game1Winner}
-          </p>
+        <p className={game1winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game1winner === 'string' ? game1winner: game1winner.attributes.name}</p>
           <div className="spacer"></div>
-          <p className={game2Winner === 'TBD' ? 'text-primary' : 'text-green'}>
-            {game2Winner}
-          </p>
+          <p className={game2winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game2winner === 'string' ? game2winner: game2winner.attributes.name}</p>
         </div>
       </div>
     </>
