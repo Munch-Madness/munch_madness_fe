@@ -6,31 +6,31 @@ interface Props {
 }
 
 function Eight({ bracketRestaurants, setRound2Winners }: Props) {
-  const [game1Winner, setGame1Winner]:any = useState('TBD');
-  const [game2Winner, setGame2Winner]:any = useState('TBD');
-  const [game3Winner, setGame3Winner]:any = useState('TBD');
-  const [game4Winner, setGame4Winner]:any = useState('TBD');
+  const [game2winner, setGame2Winner] = useState<string | {attributes:{name: string}}>('TBD');
+  const [game1winner, setGame1Winner] = useState<string | {attributes:{name: string}}>('TBD');
+  const [game3winner, setGame3Winner] = useState<string | {attributes:{name: string}}>('TBD');
+  const [game4winner, setGame4Winner] = useState<string | {attributes:{name: string}}>('TBD');
 
   useEffect(() => {
     if (
-      game1Winner !== 'TBD' &&
-      game2Winner !== 'TBD' &&
-      game3Winner !== 'TBD' &&
-      game4Winner !== 'TBD'
+      game1winner !== 'TBD' &&
+      game2winner !== 'TBD' &&
+      game3winner !== 'TBD' &&
+      game4winner !== 'TBD'
     ) {
       setRound2Winners([
-        game1Winner,
-        game2Winner,
-        game3Winner,
-        game4Winner,
+        game1winner,
+        game2winner,
+        game3winner,
+        game4winner,
       ]);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    game1Winner,
-    game2Winner,
-    game3Winner,
-    game4Winner,
+    game1winner,
+    game2winner,
+    game3winner,
+    game4winner,
   ]);
 
   return (
@@ -107,14 +107,14 @@ function Eight({ bracketRestaurants, setRound2Winners }: Props) {
       </div>
       <div className="round">
         <div className="matchup-container three">
-          <p className={game1Winner === 'TBD' ? 'text-primary' : 'text-green'} >{game1Winner}</p>
+        <p className={game1winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game1winner === 'string' ? game1winner: game1winner.attributes.name}</p>
           <div className="spacer"></div>
-          <p className={game2Winner === 'TBD' ? 'text-primary' : 'text-green'} >{game2Winner}</p>
+          <p className={game2winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game2winner === 'string' ? game2winner: game2winner.attributes.name}</p>
         </div>
         <div className="matchup-container three">
-          <p className={game3Winner === 'TBD' ? 'text-primary' : 'text-green'} >{game3Winner}</p>
+        <p className={game3winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game3winner === 'string' ? game3winner: game3winner.attributes.name}</p>
           <div className="spacer"></div>
-          <p className={game4Winner === 'TBD' ? 'text-primary' : 'text-green'} >{game4Winner}</p>
+          <p className={game4winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game4winner === 'string' ? game4winner: game4winner.attributes.name}</p>
         </div>
       </div>
       <div className="round">
