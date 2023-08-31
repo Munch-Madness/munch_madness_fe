@@ -13,7 +13,7 @@ function App() {
   const [readyToPlay, setReadyToPlay]:any = useState(false)
 
   useEffect(() => {
-    fetch("https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/?query=80214&search=random")
+    fetch("https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/?query=80909&search=random")
     .then(response => {
       if (!response.ok) {
         throw new Error("Problem with Network");
