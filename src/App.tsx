@@ -23,7 +23,7 @@ function App() {
     .then(data => {
       setFetchedRestaurants(data.data);
     })
-    .catch(error => console.error(error));
+    .catch(error => setError(error.message));
   }, []);
 console.log(fetchedRestaurants, "fetched")
 console.log(bracketRestaurants, "bracket")
