@@ -1,24 +1,24 @@
-const MunchMadnessCache: string = 'MunchMadnessCache'
-const files: string[] = ['/', '/index.html', '/App.tsx', '/index.tsx']
+const MunchMadnessCache = 'MunchMadnessCache'
+const files = ['/', '/index.html', '/App.tsx', '/index.tsx']
 
-self.addEventListener('install', (event: any) => {
+self.addEventListener('install', (event ) => {
   event.waitUntil(
-    caches.open(MunchMadnessCache).then((cache: any) => {
+    caches.open(MunchMadnessCache).then((cache ) => {
       return cache.addAll(files)
     })
   )
 })
 
-self.addEventListener('fetch', (event: any) => {
+self.addEventListener('fetch', (event ) => {
   event.respondWith(
-    caches.match(event.request).then((response: any) => {
+    caches.match(event.request).then((response ) => {
       if (response) {
         return response
       } 
       return fetch(event.request)
-      .then((response: any) => {
+      .then((response ) => {
         const responseClone = response.clone()
-        caches.open(MunchMadnessCache).then((cache: any) => {
+        caches.open(MunchMadnessCache).then((cache ) => {
           cache.put(event.request, responseClone)
         })
         return response
