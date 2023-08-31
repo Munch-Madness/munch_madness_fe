@@ -16,12 +16,12 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
 
   const restaurantOptions = searchParams ? fetchedRestaurants.filter((restaurant, index) => restaurant.attributes.name.toLowerCase().includes(searchParams.toLowerCase())).sort() : fetchedRestaurants.sort()
   const displayRestaurants = restaurantOptions.map((restaurant, index) => (
-    <li key={index} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.includes(restaurant.attributes.name) ? <span className='remove' id={restaurant.attributes.name} onClick={selectRestaurant}>🟢</span> : <span className='add' id={restaurant.attributes.name} onClick={selectRestaurant}>⚪️</span>}</span></li>
+    <li key={index} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.includes(restaurant.attributes.name) ? <span className='remove' id={index.toString()} onClick={selectRestaurant}>🟢</span> : <span className='add' id={index.toString()} onClick={selectRestaurant}>⚪️</span>}</span></li>
   ))
 
   function selectRestaurant(event: any) {
     if (bracketRestaurants.length < bracketSize && event.target.className === 'add') {
-      setBracketRestaurants([...bracketRestaurants, event.target.id])
+      setBracketRestaurants([...bracketRestaurants, fetchedRestaurants[Number(event.target.id)]])
     } else if (event.target.className === 'remove') {
       const removed = bracketRestaurants.filter(restaurant => (
         restaurant !== event.target.id

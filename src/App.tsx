@@ -7,10 +7,10 @@ import ErrorMessage from './components/error';
 
 function App() {
   const [error, setError] = useState("")
-  const [bracketSize, setBracketSize] = useState(0)
-  const [fetchedRestaurants, setFetchedRestaurants] = useState([])
-  const [bracketRestaurants, setBracketRestaurants] = useState([]);
-  const [readyToPlay, setReadyToPlay] = useState(false)
+  const [bracketSize, setBracketSize]:any = useState(0)
+  const [fetchedRestaurants, setFetchedRestaurants]:any = useState([])
+  const [bracketRestaurants, setBracketRestaurants]:any = useState([]);
+  const [readyToPlay, setReadyToPlay]:any = useState(false)
 
   useEffect(() => {
     fetch("https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/?query=80214&search=random")
@@ -21,13 +21,12 @@ function App() {
       return response.json();
     })
     .then(data => {
-      console.log(data.data[0].attributes.name)
       setFetchedRestaurants(data.data);
     })
-    // .then(data => console.log(data))
     .catch(error => console.error(error));
   }, []);
 console.log(fetchedRestaurants, "fetched")
+console.log(bracketRestaurants, "bracket")
  
   return (
     <div className="App flex flex-col justify-center items-center bg-background">
