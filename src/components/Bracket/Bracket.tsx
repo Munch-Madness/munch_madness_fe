@@ -12,26 +12,7 @@ interface Props {
 }
 
 function Bracket({setBracketSize, bracketRestaurants, setBracketRestaurants, setReadyToPlay}: Props) {
-  // const [bracketRestaurants, setBracketRestaurants] = useState([
-  //   'Omakase',
-  //   'Freebirds',
-  //   'Wendys',
-  //   'Dennys',
-  //   'McDonalds',
-  //   'Taco Bell',
-  //   'Burger King',
-  //   'Chipotle',
-  //   'Applebees',
-  //   'Taco Star',
-  //   'Red Robin',
-  //   'Red Lobster',
-  //   'Ruths Chris',
-  //   'Burgerville',
-  //   'iHop',
-  //   'Cheba Hut',
-  // ]);
-  // 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut', 'Applebees', 'Taco Star', 'Red Robin', 'Red Lobster', 'McDonalds', 'Taco Bell', 'iHop', 'Cheba Hut'
-  //fetch will go here and use setBracketRestaurants to set the state of the bracketRestaurants array and use bracketSize to fetch the right number of bracketRestaurants
+  
   const [round2Winners, setRound2Winners]:any = useState([]);
   const [round1Winners, setRound1Winners]:any = useState([]);
   const [round3Winners, setRound3Winners]:any = useState([]);

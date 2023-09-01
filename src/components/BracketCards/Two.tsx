@@ -6,10 +6,10 @@ interface Props {
     attributes: {
       name: string,
     }}[];
-  setWinner: Function;
+  setWinner: Function,
 }
 
-function Two({ bracketRestaurants, setWinner }: Props) {
+function Two({ bracketRestaurants, setWinner}: Props) {
   const [game1Winner, setGame1Winner] = useState<string | object>('TBD');
 
   useEffect(() => {
