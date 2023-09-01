@@ -7,9 +7,10 @@ interface Props {
   setReadyToPlay: Function;
   bracketSize: number;
   setBracketSize:Function;
+  loading: boolean;
 }
 
-export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, bracketRestaurants, setReadyToPlay, bracketSize, setBracketSize}: Props) {
+export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, bracketRestaurants, setReadyToPlay, bracketSize, setBracketSize, loading}: Props) {
 
 
   const [searchParams, setSearchParams] = useState('')
@@ -54,8 +55,8 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
         <button className='text-green text-lg border p-2 rounded-lg hover:bg-green hover:text-background transition duration-250' onClick={random}>Randomize</button>
       </div>
       {bracketRestaurants.length !== bracketSize && <p className='text-primary mb-5 self-start red'>select {bracketSize - bracketRestaurants.length} more restaurants</p>}
-      <ul className='select'>
-        {displayRestaurants}
+      <ul className={loading ? 'flex flex-col justify-center items-center' : 'select'}>
+        {loading ? (<img alt='Munch Madness Logo' src='./assets/fk.png' className='animate-spin-slow h-12 items-center mt-4'/>) : displayRestaurants}
       </ul>
       {bracketRestaurants.length === bracketSize && <button onClick={() => setReadyToPlay(true)} className='text-green mt-3 text-lg border p-2 rounded-lg hover:bg-green hover:text-background transition duration-250'>Let's Play!</button>}
     </div>

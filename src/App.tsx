@@ -12,6 +12,12 @@ function App() {
   const [bracketRestaurants, setBracketRestaurants]: any = useState([]);
   const [readyToPlay, setReadyToPlay]: any = useState(false);
   const [zipCode, setZipCode]: any = useState('');
+  const [loading, setLoading] = useState(true);
+
+  function loadRestaurants(data: object) {
+    setFetchedRestaurants(data);
+    setLoading(false);
+  }
 
   useEffect(() => {
     if (zipCode.length === 5 && bracketSize) {
@@ -24,7 +30,7 @@ function App() {
           }
           return response.json();
         })
-        .then((data) => setFetchedRestaurants(data.data))
+        .then((data) => loadRestaurants(data.data))
         .catch((error: Error) => setError(error.message));
     }
   }, [zipCode, bracketSize]);
@@ -55,6 +61,7 @@ function App() {
           setReadyToPlay={setReadyToPlay}
           bracketSize={bracketSize}
           setBracketSize={setBracketSize}
+          loading={loading}
         />
       )}
       {readyToPlay && (

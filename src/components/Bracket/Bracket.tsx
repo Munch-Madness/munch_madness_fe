@@ -21,16 +21,16 @@ function Bracket({setBracketSize, bracketRestaurants, setBracketRestaurants, set
   useEffect(() => {
     if (round1Winners.length === 8) {
       setBracketRestaurants(round1Winners);
-    }console.log(round1Winners,"rnd1")
+    }
     if (round2Winners.length === 4) {
       setBracketRestaurants(round2Winners);
-    }console.log(round2Winners,"rnd2")
+    }
     if (round3Winners.length === 2) {
       setBracketRestaurants(round3Winners);
-    }console.log(round3Winners,"rnd3")
+    }
     if (winner !== '') {
       setBracketRestaurants([winner]);
-    }console.log(winner,"winner")
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [round1Winners, round2Winners, round3Winners, winner]);
 
