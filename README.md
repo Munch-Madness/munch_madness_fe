@@ -70,7 +70,7 @@ Github repositories:
 
 * [![Ruby][Ruby]][Ruby-url]
 * [![Rails][Rails]][Rails-url]
-* [![React]][React-url]
+* [React][React-url]
 * [![Tailwind][Tailwind]][Tailwind-url]
 * [![Postgres][Postgres]][Postgres-url]
 * [![Heroku][Heroku]][Heroku-url]
