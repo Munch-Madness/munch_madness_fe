@@ -4,7 +4,7 @@
 <a id="readme-top"></a>
 
 <!-- PROJECT SHIELDS -->
-<img src="munch-madness-logo-ko.png" alt="Logo" width="400" height="200" margin="0">
+
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
