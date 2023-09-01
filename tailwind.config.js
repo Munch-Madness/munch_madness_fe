@@ -11,7 +11,11 @@ module.exports = {
       magenta: "#ff00ff",
       red: "#ff0000",
     },
-    extend: {},
+    extend: {
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+      }
+    },
   },
   plugins: [],
 }

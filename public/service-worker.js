@@ -30,6 +30,7 @@ self.addEventListener('fetch', (event ) => {
 
 self.addEventListener('activate', () => {
   caches.keys().then(keys => {
+    // eslint-disable-next-line array-callback-return
     keys.map(key => {
       if (key !== MunchMadnessCache) {
         caches.delete(key)
