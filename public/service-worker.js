@@ -1,6 +1,7 @@
 const MunchMadnessCache = 'MunchMadnessCache'
 const files = ['/', '/index.html', '/App.tsx', '/index.tsx']
 
+const self = this
 self.addEventListener('install', (event ) => {
   event.waitUntil(
     caches.open(MunchMadnessCache).then((cache ) => {

@@ -1,9 +1,10 @@
 
 interface Props {
   setBracketSize: Function,
+  setZipCode: Function
 }
 
-export const BracketChoice = ({setBracketSize}: Props ) => {
+export const BracketChoice = ({setZipCode, setBracketSize}: Props ) => {
 
   function handleClick(e: any, size: number) {
     e.preventDefault()
@@ -12,6 +13,8 @@ export const BracketChoice = ({setBracketSize}: Props ) => {
 
   return (
     <div className="flex flex-col justify-center">
+      <h1 className='text-3xl text-primary text-center'>Enter Your Zip Code</h1>
+      <input className='text-3xl text-background text-center' type='text' placeholder='Enter Zip Code' onChange={(e) => setZipCode(e.target.value)}></input>
       <h1 className='text-3xl text-primary text-center' >Choose Your Bracket Size</h1>
       <p className='text-xl text-primary text-center'>How many restaurants do you want to compare?</p>
       <div className='flex justify-center content-center'>
