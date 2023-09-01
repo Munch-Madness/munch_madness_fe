@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 interface Props {
   fetchedRestaurants: {attributes:{name: string}}[];
   setBracketRestaurants: Function;
-  bracketRestaurants: string[];
+  bracketRestaurants: {attributes: {name: string}}[];
   setReadyToPlay: Function;
   bracketSize: number;
   setBracketSize:Function;
@@ -16,15 +16,16 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
 
   const restaurantOptions = searchParams ? fetchedRestaurants.filter((restaurant, index) => restaurant.attributes.name.toLowerCase().includes(searchParams.toLowerCase())).sort() : fetchedRestaurants.sort()
   const displayRestaurants = restaurantOptions.map((restaurant, index) => (
-    <li key={index} className='flex justify-between pr-10 py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.includes(restaurant.attributes.name) ? <span className='remove' id={index.toString()} onClick={selectRestaurant}>🟢</span> : <span className='add' id={index.toString()} onClick={selectRestaurant}>⚪️</span>}</span></li>
+    <li key={index} className='flex justify-between py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.some(rest => rest.attributes.name === restaurant.attributes.name) ? <span className='remove' id={index.toString()} onClick={selectRestaurant}>🟢</span> : <span className='add' id={index.toString()} onClick={selectRestaurant}>⚪️</span>}</span></li>
   ))
-
+  
+  // changes made here
   function selectRestaurant(event: any) {
     if (bracketRestaurants.length < bracketSize && event.target.className === 'add') {
       setBracketRestaurants([...bracketRestaurants, fetchedRestaurants[Number(event.target.id)]])
     } else if (event.target.className === 'remove') {
       const removed = bracketRestaurants.filter(restaurant => (
-        restaurant !== event.target.id
+    restaurant.attributes.name !== fetchedRestaurants[Number(event.target.id)].attributes.name
       ))
       setBracketRestaurants(removed)
     }
