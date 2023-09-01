@@ -18,7 +18,8 @@ export default function SelectMenu({fetchedRestaurants, setBracketRestaurants, b
   const displayRestaurants = restaurantOptions.map((restaurant, index) => (
     <li key={index} className='flex justify-between py-1 cursor-pointer'>{restaurant.attributes.name} <span>{bracketRestaurants.some(rest => rest.attributes.name === restaurant.attributes.name) ? <span className='remove' id={index.toString()} onClick={selectRestaurant}>🟢</span> : <span className='add' id={index.toString()} onClick={selectRestaurant}>⚪️</span>}</span></li>
   ))
-
+  
+  // changes made here
   function selectRestaurant(event: any) {
     if (bracketRestaurants.length < bracketSize && event.target.className === 'add') {
       setBracketRestaurants([...bracketRestaurants, fetchedRestaurants[Number(event.target.id)]])
