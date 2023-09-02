@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root, .App {
+html,
+body,
+#root,
+.App {
   min-height: 100vh;
 }
 .round {
@@ -10,6 +13,7 @@ html, body, #root, .App {
   flex-direction: column;
   justify-content: space-around;
   height: 90vh;
+  width: 25%;
 }
 
 .matchup-container {
@@ -17,31 +21,35 @@ html, body, #root, .App {
   flex-direction: column;
   justify-content: center;
   height: 10%;
-  width: 100px;
+  width: 100%;
   text-align: center;
   font-size: 12px;
 }
 
+.one {
+  height: 9%;
+  width: 100%;
+}
 .two {
   height: 18%;
-  width: 100px;
+  width: 100%;
 }
 
 .three {
   height: 35%;
-  width: 100px;
+  width: 100%;
 }
 
 .four {
   height: 73%;
-  width: 100px;
+  width: 100%;
 }
 
 .spacer {
   border-top: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
-  height: 70%;
+  height: 60%;
   width: 100%;
   border-color: whitesmoke;
 }
@@ -53,7 +61,7 @@ html, body, #root, .App {
 .select {
   color: white;
   font-size: x-large;
-  height: 350px;
+  height: 400px;
   overflow-y: scroll;
   width: 100%;
 }
@@ -63,7 +71,7 @@ li {
   border-radius: 3px;
   margin: 5px 0;
   padding: 0 5px;
-  width: 99%
+  width: 99%;
 }
 
 .list {
@@ -72,7 +80,7 @@ li {
   width: 750px;
   /* min-width: 320px; */
   align-items: center;
-  margin-top: 15%;
+  margin-top: 5%;
 }
 
 ::-webkit-scrollbar {
@@ -81,7 +89,7 @@ li {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white
+  background: white;
 }
 
 .red {
@@ -89,12 +97,12 @@ li {
 }
 
 .search {
-  width: 300px
+  width: 300px;
 }
 
 @media screen and (max-width: 768px) {
   .list {
-    width: 320px
+    width: 320px;
   }
 
   .search {

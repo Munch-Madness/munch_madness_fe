@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PiMedalFill } from 'react-icons/pi';
+import { truncateString } from '../util/helperFunctions';
 
 interface Props {
   bracketRestaurants: {attributes:{name: string}}[];
@@ -60,7 +61,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame1Winner(bracketRestaurants[0])}
             />
-            <p className="team text-primary">{bracketRestaurants[0].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[0].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -68,7 +69,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame1Winner(bracketRestaurants[15])}
             />
-            <p className="team text-primary">{bracketRestaurants[15].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[15].attributes.name)}</p>
           </div>
         </div>
         <div className="matchup-container one">
@@ -77,7 +78,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame2Winner(bracketRestaurants[7])}
             />
-            <p className="team text-primary">{bracketRestaurants[7].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[7].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -85,7 +86,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame2Winner(bracketRestaurants[8])}
             />
-            <p className="team text-primary">{bracketRestaurants[8].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[8].attributes.name)}</p>
           </div>
         </div>
         <div className="matchup-container one">
@@ -94,7 +95,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame3Winner(bracketRestaurants[3])}
             />
-            <p className="team text-primary">{bracketRestaurants[3].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[3].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -102,7 +103,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame3Winner(bracketRestaurants[12])}
             />
-            <p className="team text-primary">{bracketRestaurants[12].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[12].attributes.name)}</p>
           </div>
         </div>
         <div className="matchup-container one">
@@ -111,7 +112,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame4Winner(bracketRestaurants[4])}
             />
-            <p className="team text-primary">{bracketRestaurants[4].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[4].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -119,7 +120,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame4Winner(bracketRestaurants[11])}
             />
-            <p className="team text-primary">{bracketRestaurants[11].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[11].attributes.name)}</p>
           </div>
         </div>
         <div className="matchup-container one">
@@ -128,7 +129,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame5Winner(bracketRestaurants[1])}
             />
-            <p className="team text-primary">{bracketRestaurants[1].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[1].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -136,7 +137,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame5Winner(bracketRestaurants[14])}
             />
-            <p className="team text-primary">{bracketRestaurants[14].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[14].attributes.name)}</p>
           </div>
         </div>
         <div className="matchup-container one">
@@ -145,7 +146,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame6Winner(bracketRestaurants[6])}
             />
-            <p className="team text-primary">{bracketRestaurants[6].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[6].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -153,7 +154,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame6Winner(bracketRestaurants[9])}
             />
-            <p className="team text-primary">{bracketRestaurants[9].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[9].attributes.name)}</p>
           </div>
         </div>
         <div className="matchup-container one">
@@ -162,7 +163,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame7Winner(bracketRestaurants[2])}
             />
-            <p className="team text-primary">{bracketRestaurants[2].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[2].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -170,7 +171,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame7Winner(bracketRestaurants[13])}
             />
-            <p className="team text-primary">{bracketRestaurants[13].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[13].attributes.name)}</p>
           </div>
         </div>
         <div className="matchup-container one">
@@ -179,7 +180,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame8Winner(bracketRestaurants[5])}
             />
-            <p className="team text-primary">{bracketRestaurants[5].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[5].attributes.name)}</p>
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
@@ -187,7 +188,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
               className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame8Winner(bracketRestaurants[10])}
             />
-            <p className="team text-primary">{bracketRestaurants[10].attributes.name}</p>
+            <p className="team text-primary">{truncateString(bracketRestaurants[10].attributes.name)}</p>
           </div>
         </div>
       </div>

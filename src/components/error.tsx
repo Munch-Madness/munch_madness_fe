@@ -7,8 +7,8 @@ interface ErrorProps {
 function ErrorMessage({ message }: ErrorProps) {
   return (
     <div>
-      <h2>"Error"</h2>
-      <p>{message}</p>
+      <h2 className='text-primary'>"Error"</h2>
+      <p className='text-primary'>{message}</p>
     </div>
   );
 }

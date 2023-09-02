@@ -63,7 +63,7 @@ function Bracket({setBracketSize, bracketRestaurants, setBracketRestaurants, set
   };
 
   return (
-    <div className="flex justify-center p-2 h-full">
+    <div className="flex justify-center p-2 h-full md:w-3/5 w-full">
       {bracketRestaurants.length > 0 ? displayBracket() : 'No Bracket Set'}
     </div>
   );
