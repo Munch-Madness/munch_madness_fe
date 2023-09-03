@@ -46,7 +46,7 @@ function App() {
         className={
           readyToPlay
             ? `w-36 items-center absolute top-0 right-0 md:w-72 `
-            : `w-36 items-center absolute top-0 md:w-96`
+            : `w-36 items-center absolute top-0 md:w-72`
         }
       />
       {!bracketSize && (
