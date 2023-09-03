@@ -8,6 +8,8 @@ interface Props {
   bracketSize: number;
   setBracketSize: Function;
   loading: boolean;
+  setFetchedRestaurants: Function;
+  setError: Function;
 }
 
 export default function SelectMenu({
@@ -18,6 +20,8 @@ export default function SelectMenu({
   bracketSize,
   setBracketSize,
   loading,
+  setFetchedRestaurants,
+  setError
 }: Props) {
   const [searchParams, setSearchParams] = useState('');
 
@@ -86,6 +90,8 @@ export default function SelectMenu({
   function goBack() {
     setBracketSize(0);
     setBracketRestaurants([]);
+    setFetchedRestaurants([]);
+    setError('')
   }
 
   function searchRestaurants(event: any) {

@@ -65,6 +65,8 @@ function App() {
           bracketSize={bracketSize}
           setBracketSize={setBracketSize}
           loading={loading}
+          setFetchedRestaurants={setFetchedRestaurants}
+          setError={setError}
         />
       )}
       {readyToPlay && (

@@ -55,3 +55,9 @@ export function renderAddress(address: string) {
     return 'No address data';
   }
 }
+
+export const validateZip = (str: string) => {
+  const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+  const zip = str.split('')
+  return zip.every(num => nums.includes(num))
+}
