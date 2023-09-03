@@ -14,7 +14,7 @@ function App() {
   const [readyToPlay, setReadyToPlay]: any = useState(false);
   const [zipCode, setZipCode]: any = useState('');
   const [loading, setLoading] = useState(true);
-  const [isOpen, isClosed] = useState(false)
+  // const [isOpen, isClosed] = useState(false)
   // Modal useState above
 
   function loadRestaurants(data: object) {
