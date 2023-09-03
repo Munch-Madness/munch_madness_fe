@@ -67,6 +67,7 @@ function App() {
           loading={loading}
           setFetchedRestaurants={setFetchedRestaurants}
           setError={setError}
+          setLoading={setLoading}
         />
       )}
       {readyToPlay && (

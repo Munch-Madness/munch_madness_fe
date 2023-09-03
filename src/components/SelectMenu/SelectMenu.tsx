@@ -10,6 +10,7 @@ interface Props {
   loading: boolean;
   setFetchedRestaurants: Function;
   setError: Function;
+  setLoading: Function;
 }
 
 export default function SelectMenu({
@@ -21,7 +22,8 @@ export default function SelectMenu({
   setBracketSize,
   loading,
   setFetchedRestaurants,
-  setError
+  setError,
+  setLoading
 }: Props) {
   const [searchParams, setSearchParams] = useState('');
 
@@ -91,7 +93,8 @@ export default function SelectMenu({
     setBracketSize(0);
     setBracketRestaurants([]);
     setFetchedRestaurants([]);
-    setError('')
+    setError('');
+    setLoading(true);
   }
 
   function searchRestaurants(event: any) {
