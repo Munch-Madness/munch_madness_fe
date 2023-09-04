@@ -1,6 +1,7 @@
 import { cleanUp, unreg } from './testerFunctions';
 
 beforeEach(() => {
+  cleanUp();
   cy.visit('http://localhost:3000');
   cy.intercept(
     'GET',
@@ -15,7 +16,6 @@ beforeEach(() => {
 describe('template spec', () => {
   it('should show bracket selection on page load', () => {
     unreg();
-    cy.visit('http://localhost:3000')
     cy.get('img').should('have.attr', 'src', './assets/MunchMadness.PNG')
     cy.get('h1').should('have.text', 'Enter Your Zip CodeChoose Your Bracket Size')
     cy.get('p').should('have.text', 'How many restaurants do you want to compare?')
@@ -25,7 +25,6 @@ describe('template spec', () => {
   })
   it('should show restaurants for user to choose from', () => {
     unreg();
-    cy.visit('http://localhost:3000')
     cy.get('input').type('89128');
     cy.get('button').first().click();
     cy.wait('@getRestaurants');
@@ -36,7 +35,6 @@ describe('template spec', () => {
   });
   it('should not allow a user to move on without a full zipCode or with letters in zipCode', () => {
     unreg();
-    cy.visit('http://localhost:3000')
     cy.get('input').type('8912');
     cy.get('button').should('be.disabled');
     cy.get('input').type('8');
