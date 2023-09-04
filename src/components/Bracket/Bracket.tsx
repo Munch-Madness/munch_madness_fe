@@ -65,7 +65,7 @@ function Bracket({
 
   const [play, { stop }] = useSound(
     sounds[Math.floor(Math.random() * sounds.length)],
-    { volume: 0.5 }
+    { volume: 0.4 }
   );
 
   useEffect(() => {
