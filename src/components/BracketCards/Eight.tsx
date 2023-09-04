@@ -114,19 +114,19 @@ function Eight({ bracketRestaurants, setRound2Winners }: Props) {
           </div>
         </div>
       </div>
-      <div className="round">
+      <div className="future-round">
         <div className="matchup-container three">
-        <p className={game1winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game1winner === 'string' ? game1winner: game1winner.attributes.name}</p>
+        <p className={game1winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'} >{typeof game1winner === 'string' ? game1winner: game1winner.attributes.name}</p>
           <div className="spacer"></div>
-          <p className={game2winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game2winner === 'string' ? game2winner: game2winner.attributes.name}</p>
+          <p className={game2winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'} >{typeof game2winner === 'string' ? game2winner: game2winner.attributes.name}</p>
         </div>
         <div className="matchup-container three">
-        <p className={game3winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game3winner === 'string' ? game3winner: game3winner.attributes.name}</p>
+        <p className={game3winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'} >{typeof game3winner === 'string' ? game3winner: game3winner.attributes.name}</p>
           <div className="spacer"></div>
-          <p className={game4winner === 'TBD' ? 'text-primary' : 'text-green'} >{typeof game4winner === 'string' ? game4winner: game4winner.attributes.name}</p>
+          <p className={game4winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'} >{typeof game4winner === 'string' ? game4winner: game4winner.attributes.name}</p>
         </div>
       </div>
-      <div className="round">
+      <div className="future-round">
         <div className="matchup-container four">
           <p className="team">TBD</p>
           <div className="spacer"></div>
