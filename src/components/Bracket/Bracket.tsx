@@ -63,6 +63,13 @@ function Bracket({
   );
 
   useEffect(() => {
+    if (!soundOn) {
+      stop()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [soundOn])
+
+  useEffect(() => {
     if (round1Winners.length === 8) {
       setBracketRestaurants(round1Winners);
     }
