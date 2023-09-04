@@ -35,7 +35,7 @@ export function renderWebsite(website: string) {
   if (website?.length > 0) {
     return (
       <a href={website} target="_blank" rel="noreferrer">
-        <button className="border border-solid p-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background">Visit Website</button>
+        <button className="border border-solid p-2 border-green rounded text-green hover:bg-green hover:text-background hover:border-background transition duration-500">Visit Website</button>
       </a>
     );
   } else {
@@ -46,7 +46,7 @@ export function renderWebsite(website: string) {
 export function renderAddress(address: string, name: string) {
   let urlAddress = `${address.replace(/\s/g, '+')}+${name.replace(/\s/g, '+')}`;
   if (address.length > 0) {
-    return <a href={`http://maps.google.com/maps?q=${urlAddress}`} target="_blank" rel="noreferrer"><button className='border border-solid p-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background'>{address}</button></a>
+    return <a href={`http://maps.google.com/maps?q=${urlAddress}`} target="_blank" rel="noreferrer"><button className='border border-solid p-2 border-green rounded text-green hover:bg-green hover:text-background hover:border-background transition duration-500'>{address}</button></a>
   } else {
     return 'No address data';
   }

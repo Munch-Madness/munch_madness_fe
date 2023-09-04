@@ -32,7 +32,6 @@ interface Props {
 }
 
 export function RestaurantModal({ data }: Props) {
-  console.log(data);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const customStyles = {
@@ -72,7 +71,7 @@ export function RestaurantModal({ data }: Props) {
       >
         <div className='flex flex-col justify-center text-center'>
           <button
-            className="absolute top-1 right-1 border border-solid px-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background"
+            className="absolute top-1 right-1 border border-solid px-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background transition duration-250"
             onClick={handleCloseModal}
           >
             exit

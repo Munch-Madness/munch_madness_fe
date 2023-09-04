@@ -34,7 +34,6 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
   >('TBD');
 
   useEffect(() => {
-    console.log(bracketRestaurants[0]);
     if (
       game1winner !== 'TBD' &&
       game2winner !== 'TBD' &&
@@ -256,61 +255,61 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
           </div>
         </div>
       </div>
-      <div className="round">
+      <div className="future-round">
         <div className="matchup-container two">
-          <p className={game1winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game1winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game1winner === 'string'
               ? game1winner
               : game1winner.attributes.name}
           </p>
           <div className="spacer"></div>
-          <p className={game2winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game2winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game2winner === 'string'
               ? game2winner
               : game2winner.attributes.name}
           </p>
         </div>
         <div className="matchup-container two">
-          <p className={game3winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game3winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game3winner === 'string'
               ? game3winner
               : game3winner.attributes.name}
           </p>
           <div className="spacer"></div>
-          <p className={game4winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game4winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game4winner === 'string'
               ? game4winner
               : game4winner.attributes.name}
           </p>
         </div>
         <div className="matchup-container two">
-          <p className={game5winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game5winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game5winner === 'string'
               ? game5winner
               : game5winner.attributes.name}
           </p>
           <div className="spacer"></div>
-          <p className={game6winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game6winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game6winner === 'string'
               ? game6winner
               : game6winner.attributes.name}
           </p>
         </div>
         <div className="matchup-container two">
-          <p className={game7winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game7winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game7winner === 'string'
               ? game7winner
               : game7winner.attributes.name}
           </p>
           <div className="spacer"></div>
-          <p className={game8winner === 'TBD' ? 'text-primary' : 'text-green'}>
+          <p className={game8winner === 'TBD' ? 'text-primary' : 'text-green truncate p-1'}>
             {typeof game8winner === 'string'
               ? game8winner
               : game8winner.attributes.name}
           </p>
         </div>
       </div>
-      <div className="round">
+      <div className="future-round">
         <div className="matchup-container three">
           <p className="team text-primary">TBD</p>
           <div className="spacer"></div>
@@ -322,7 +321,7 @@ function Sixteen({ bracketRestaurants, setRound1Winners }: Props) {
           <p className="team text-primary">TBD</p>
         </div>
       </div>
-      <div className="round">
+      <div className="future-round">
         <div className="matchup-container four">
           <p className="team text-primary">TBD</p>
           <div className="spacer"></div>

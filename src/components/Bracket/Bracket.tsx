@@ -20,6 +20,13 @@ import {
   Unbelievable,
 } from '../../sounds';
 import useSound from 'use-sound';
+import {
+  renderPrice,
+  renderRating,
+  renderWebsite,
+  renderAddress,
+} from '../util/helperFunctions';
+
 interface Props {
   setBracketSize: Function;
   bracketRestaurants: { attributes: { name: string } }[];
@@ -37,7 +44,7 @@ function Bracket({
   const [round1Winners, setRound1Winners]: any = useState([]);
   const [round3Winners, setRound3Winners]: any = useState([]);
   const [winner, setWinner]: any = useState('');
-  const [soundOn, setSoundOn] = useState(true);
+  const [soundOn, setSoundOn] = useState(false);
 
   let sounds = [
     zagLa,
@@ -63,10 +70,10 @@ function Bracket({
 
   useEffect(() => {
     if (!soundOn) {
-      stop()
+      stop();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [soundOn])
+  }, [soundOn]);
 
   useEffect(() => {
     if (round1Winners.length === 8) {
@@ -121,12 +128,21 @@ function Bracket({
       );
     } else if (bracketRestaurants.length === 1) {
       return (
-        <div className="flex flex-col">
+        <div className="flex flex-col justify-center items-center">
           <h1 className="text-4xl text-green text-center">
             {winner.attributes.name}
           </h1>
+          <img src={winner.attributes.photo} alt={winner.attributes.name} />
+          <div className="flex flex-row justify-between w-full">
+            <p className="flex items-center text-primary">Price: {renderPrice(winner.attributes.price)}</p>
+            <p className='text-primary'>Rating: {renderRating(winner.attributes.rating)}</p>
+          </div>
+          <p className="m-4">{renderWebsite(winner.attributes.website)}</p>
+          <p>
+            {renderAddress(winner.attributes.address, winner.attributes.name)}
+          </p>
           <button
-            className="text-green border rounded p-2 m-4 hover:bg-green hover:text-background transition duration-250"
+            className="text-green border rounded p-2 m-4 hover:bg-green hover:text-background transition duration-500"
             onClick={() => resetGame()}
           >
             Go Again?
@@ -142,7 +158,7 @@ function Bracket({
         className="absolute top-1 left-1 border border-solid px-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background"
         onClick={() => setSoundOn(!soundOn)}
       >
-        {soundOn ? <p>Mute</p> : <p>Muted</p>}
+        {soundOn ? <p>Unmuted</p> : <p>Muted</p>}
       </button>
       {bracketRestaurants.length > 0 ? displayBracket() : 'No Bracket Set'}
     </div>
