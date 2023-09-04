@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Buca di Beppo Italian Restaurant",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3DuenCeDk5FOKKsTIYyTJDitp4YHvREJ1gKVDwGQeFY2D5iEv8IfbQyvkFPuW_6futPpziNq4wRqzb6YYuMSWO5BEw9ZYkGyEWw=s1600-w400",
+        "price": 2,
+        "rating": 4.5,
+        "website": "https://locations.bucadibeppo.com/us/nv/las-vegas/7690-w-lake-mead-blvd?utm_source=google&utm_campaign=local-listing&utm_medium=organic&utm_content=gmb&y_source=1_NDgxNzY0OS03MTUtbG9jYXRpb24ud2Vic2l0ZQ%3D%3D",
+        "address": "7690 West Lake Mead Boulevard, Las Vegas"
+      }
+    },
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Marché Bacchus",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3DtSOhKa-ndhv8BJnOjVxg1XZ_58y8__frOh_Mha7F5gH6ZOHFAQ_7N9M6mN2vlmPn9StFKluoET0bwFPByy8bYFIk6HdcTKrN0=s1600-w400",
+        "price": 3,
+        "rating": 4.4,
+        "website": "http://www.marchebacchus.com/",
+        "address": "2620 Regatta Drive, Las Vegas"
+      }
+    },
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Joe's Crab Shack",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3DtbgESJ979MVjo-Trbigzl90miWuVlPjqmCG7NqcEqj_t7BsCzWjFfjmPbkFb57p8eVfDY9LOEoUBqH9vZoHkG1MKd3cQZPxIY=s1600-w400",
+        "price": 2,
+        "rating": 4.1,
+        "website": "http://www.joescrabshack.com/",
+        "address": "1991 North Rainbow Boulevard, Las Vegas"
+      }
+    },
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Pinkbox Doughnuts",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3DvEp6_v6KudiPRyyfmSOf1aieE1XYldnhfs_K7SYw39PSYn3zMP1VGWnZPYb2jrn5tysp68nZ-tUogSkDMdmMJoRPv7r3XfxC0=s1600-w400",
+        "price": 1,
+        "rating": 4.5,
+        "website": "https://pinkboxdoughnuts.com/",
+        "address": "7531 West Lake Mead Boulevard #110, Las Vegas"
+      }
+    },
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Famous Dave's Bar-B-Que",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3DvI23OUecqAEPpMcrYylmD-QX4BlAwr5KxvGg_JhCrfVf7GSTLCOIHf4pA2PnRNTDVuh_AS_f-qXEnfy-SKnRcCpy-KCThA8J8=s1600-w400",
+        "price": 2,
+        "rating": 4.2,
+        "website": "https://www.famousdaves.com/Las-Vegas-Rainbow",
+        "address": "1951 North Rainbow Boulevard, Las Vegas"
+      }
+    },
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Round Table Pizza",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3Duo8PB9Q69OyhhPNLPsjfLjCi3IaWFu4NTENq5jSqwsiewXkp7w8-5sSQ28WlHXUj2wMO7Jxwl9Uxui3pWY78EWzE9GqKiYESk=s1600-w400",
+        "price": 2,
+        "rating": 4.2,
+        "website": "https://www.roundtablepizza.com/location/995",
+        "address": "7460 West Lake Mead Boulevard E-8, Las Vegas"
+      }
+    },
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Burger King",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3Du31Tqlw_uncDocKmtlfkwnAN4P_jveCPBOF5P7iw_rDHfxdQyOD1dWnne5ronHTejMapW8_22l9RlsGK2lcUnCPIjYykt556c=s1600-w400",
+        "price": 1,
+        "rating": 3.4,
+        "website": "https://burgerking.com/store-locator/store/restaurant_4273",
+        "address": "8564 West Lake Mead Boulevard, Las Vegas"
+      }
+    },
+    {
+      "id": "null",
+      "type": "place",
+      "attributes": {
+        "name": "Chili's Grill & Bar",
+        "photo": "https://lh3.googleusercontent.com/places/ANJU3Dv4sUaMCZNvTuy66jKfVFAYnFM_gaNzUnL-QFdvBWYNZ5VJSyxWw0YyNifV558soA5H7WUGWWNHd8wD9QoRhNYZQ7kxx_f4vac=s1600-w400",
+        "price": 2,
+        "rating": 4.1,
+        "website": "https://www.chilis.com/locations/us/nevada/las-vegas/summerlin-lake-mead-rainbow?utm_source=google&utm_medium=local&utm_campaign=Chilis",
+        "address": "2011 North Rainbow Boulevard, Las Vegas"
+      }
+    }
+  ]
+}

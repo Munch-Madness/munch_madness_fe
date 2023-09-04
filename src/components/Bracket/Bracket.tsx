@@ -34,46 +34,54 @@ interface Props {
   setReadyToPlay: Function;
 }
 
+const sounds = [
+  zagLa,
+  andOne,
+  ColdBlooded,
+  DoubleOT,
+  HeartBreakCity,
+  Holloway,
+  JeromePt2,
+  SendItJerome,
+  Oh,
+  Miracles,
+  RattlesIt,
+  SlipperStillFits,
+  ThisIsMarchMadness,
+  Unbelievable,
+];
+
 function Bracket({
   setBracketSize,
   bracketRestaurants,
   setBracketRestaurants,
   setReadyToPlay,
 }: Props) {
-  const [round2Winners, setRound2Winners]: any = useState([]);
-  const [round1Winners, setRound1Winners]: any = useState([]);
-  const [round3Winners, setRound3Winners]: any = useState([]);
-  const [winner, setWinner]: any = useState('');
+  const [round2Winners, setRound2Winners] = useState([]);
+  const [round1Winners, setRound1Winners] = useState([]);
+  const [round3Winners, setRound3Winners] = useState([]);
+  const [winner, setWinner] = useState<null | {
+    attributes: {
+      name: string;
+      photo: string;
+      website: string;
+      address: string;
+      rating: number;
+      price: number;
+    };
+  }>(null);
   const [soundOn, setSoundOn] = useState(false);
-
-  let sounds = [
-    zagLa,
-    andOne,
-    ColdBlooded,
-    DoubleOT,
-    HeartBreakCity,
-    Holloway,
-    JeromePt2,
-    SendItJerome,
-    Oh,
-    Miracles,
-    RattlesIt,
-    SlipperStillFits,
-    ThisIsMarchMadness,
-    Unbelievable,
-  ];
-
-  const [play, { stop }] = useSound(
-    sounds[Math.floor(Math.random() * sounds.length)],
-    { volume: 0.4 }
+  const [sound, setSound] = useState(
+    sounds[Math.floor(Math.random() * sounds.length)]
   );
+
+  const [play, { stop }] = useSound(sound, { volume: 0.4 });
 
   useEffect(() => {
     if (!soundOn) {
       stop();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [soundOn]);
+  }, [soundOn, stop]);
 
   useEffect(() => {
     if (round1Winners.length === 8) {
@@ -85,7 +93,7 @@ function Bracket({
     if (round3Winners.length === 2) {
       setBracketRestaurants(round3Winners);
     }
-    if (winner !== '') {
+    if (winner !== null) {
       setBracketRestaurants([winner]);
       if (soundOn) {
         play();
@@ -98,6 +106,8 @@ function Bracket({
     setBracketSize(0);
     setBracketRestaurants([]);
     setReadyToPlay(false);
+    setWinner(null);
+    setSound(sounds[Math.floor(Math.random() * sounds.length)]);
   };
 
   const displayBracket = () => {
@@ -126,7 +136,7 @@ function Bracket({
       return (
         <Two bracketRestaurants={bracketRestaurants} setWinner={setWinner} />
       );
-    } else if (bracketRestaurants.length === 1) {
+    } else if (winner !== null) {
       return (
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-4xl text-green text-center">
@@ -134,8 +144,12 @@ function Bracket({
           </h1>
           <img src={winner.attributes.photo} alt={winner.attributes.name} />
           <div className="flex flex-row justify-between w-full">
-            <p className="flex items-center text-primary">Price: {renderPrice(winner.attributes.price)}</p>
-            <p className='text-primary'>Rating: {renderRating(winner.attributes.rating)}</p>
+            <p className="flex items-center text-primary">
+              Price: {renderPrice(winner.attributes.price)}
+            </p>
+            <p className="text-primary">
+              Rating: {renderRating(winner.attributes.rating)}
+            </p>
           </div>
           <p className="m-4">{renderWebsite(winner.attributes.website)}</p>
           <p>
