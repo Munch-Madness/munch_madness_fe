@@ -11,6 +11,8 @@ interface Props {
   setFetchedRestaurants: Function;
   setError: Function;
   setLoading: Function;
+  bracketMessage: string;
+  setBracketMessage: Function;
 }
 
 export default function SelectMenu({
@@ -23,7 +25,9 @@ export default function SelectMenu({
   loading,
   setFetchedRestaurants,
   setError,
-  setLoading
+  setLoading,
+  bracketMessage,
+  setBracketMessage
 }: Props) {
   const [searchParams, setSearchParams] = useState('');
 
@@ -95,6 +99,7 @@ export default function SelectMenu({
     setFetchedRestaurants([]);
     setError('');
     setLoading(true);
+    setBracketMessage('')
   }
 
   function searchRestaurants(event: any) {
@@ -103,7 +108,8 @@ export default function SelectMenu({
 
   return (
     <div className="list">
-      <input
+     {bracketMessage && <p className='text-primary'>{bracketMessage}</p>}
+     <input
         value={searchParams}
         type="text"
         placeholder="Search Restaurants"

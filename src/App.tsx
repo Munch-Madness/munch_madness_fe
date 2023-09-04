@@ -4,6 +4,7 @@ import { BracketChoice } from './components/BracketChoice/BracketChoice';
 import SelectMenu from './components/SelectMenu/SelectMenu';
 // import { getData } from './components/apiCalls';
 import ErrorMessage from './components/error';
+import { checkRestaurants } from './components/util/helperFunctions';
 
 
 function App() {
@@ -14,13 +15,13 @@ function App() {
   const [readyToPlay, setReadyToPlay]: any = useState(false);
   const [zipCode, setZipCode]: any = useState('');
   const [loading, setLoading] = useState(true);
-  // const [isOpen, isClosed] = useState(false)
-  // Modal useState above
+  const [bracketMessage, setBracketMessage] = useState('')
 
   function loadRestaurants(data: object) {
     setFetchedRestaurants(data);
     setLoading(false);
   }
+
 
   useEffect(() => {
     if (zipCode.length === 5 && bracketSize) {
@@ -33,10 +34,16 @@ function App() {
           }
           return response.json();
         })
-        .then((data) => loadRestaurants(data.data))
+        .then((data) => {
+          loadRestaurants(data.data)
+        })
         .catch((error: Error) => setError(error.message));
     }
   }, [zipCode, bracketSize]);
+
+  useEffect(() => {
+    checkRestaurants(fetchedRestaurants, setBracketSize, setBracketMessage)
+  }, [fetchedRestaurants])
 
   return (
     <div className="App flex flex-col justify-center items-center bg-background">
@@ -68,6 +75,8 @@ function App() {
           setFetchedRestaurants={setFetchedRestaurants}
           setError={setError}
           setLoading={setLoading}
+          bracketMessage={bracketMessage}
+          setBracketMessage={setBracketMessage}
         />
       )}
       {readyToPlay && (
