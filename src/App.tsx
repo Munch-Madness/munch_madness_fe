@@ -5,7 +5,6 @@ import SelectMenu from './components/SelectMenu/SelectMenu';
 // import { getData } from './components/apiCalls';
 import ErrorMessage from './components/error';
 
-
 function App() {
   const [error, setError] = useState('');
   const [bracketSize, setBracketSize]: any = useState(0);
@@ -14,8 +13,7 @@ function App() {
   const [readyToPlay, setReadyToPlay]: any = useState(false);
   const [zipCode, setZipCode]: any = useState('');
   const [loading, setLoading] = useState(true);
-  // const [isOpen, isClosed] = useState(false)
-  // Modal useState above
+  const [soundOn, setSoundOn] = useState(true);
 
   function loadRestaurants(data: object) {
     setFetchedRestaurants(data);
@@ -40,13 +38,19 @@ function App() {
 
   return (
     <div className="App flex flex-col justify-center items-center bg-background">
+      <button
+        className="absolute top-1 left-1 border border-solid px-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background"
+        onClick={() => setSoundOn(!soundOn)}
+      >
+        {soundOn ? <p>Mute</p> : <p>Muted</p>}
+      </button>
       <img
         src="./assets/MunchMadness.PNG"
         alt="MunchMadness Title"
         className={
           readyToPlay
-            ? `w-36 items-center absolute top-0 right-0 md:w-72 `
-            : `w-36 items-center absolute top-0 md:w-72`
+            ? `w-36 p-1 items-center absolute top-0 right-0 md:w-72 `
+            : `w-36 p-1 items-center absolute top-0 md:w-72`
         }
       />
       {!bracketSize && (
@@ -73,6 +77,7 @@ function App() {
           bracketRestaurants={bracketRestaurants}
           setBracketRestaurants={setBracketRestaurants}
           setReadyToPlay={setReadyToPlay}
+          soundOn={soundOn}
         />
       )}
       {error && <ErrorMessage message={error} />}

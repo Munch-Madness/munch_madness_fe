@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { PiMedalFill } from 'react-icons/pi';
+import { RestaurantModal } from '../Modal/Modal';
 interface Props {
   bracketRestaurants: {attributes:{name: string}}[];
   setRound2Winners: Function;
@@ -39,69 +40,77 @@ function Eight({ bracketRestaurants, setRound2Winners }: Props) {
         <div className="matchup-container two">
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame1Winner(bracketRestaurants[0])}
             />
             <p className="team text-primary">{bracketRestaurants[0].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[0]} />
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame1Winner(bracketRestaurants[1])}
             />
             <p className="team text-primary">{bracketRestaurants[1].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[1]} />
           </div>
         </div>
         <div className="matchup-container two">
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame2Winner(bracketRestaurants[2])}
             />
             <p className="team text-primary">{bracketRestaurants[2].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[2]} />
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame2Winner(bracketRestaurants[3])}
             />
             <p className="team text-primary">{bracketRestaurants[3].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[3]} />
           </div>
         </div>
         <div className="matchup-container two">
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame3Winner(bracketRestaurants[4])}
             />
             <p className="team text-primary">{bracketRestaurants[4].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[4]} />
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame3Winner(bracketRestaurants[5])}
             />
             <p className="team text-primary">{bracketRestaurants[5].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[5]} />
           </div>
         </div>
         <div className="matchup-container two">
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame4Winner(bracketRestaurants[6])}
             />
             <p className="team text-primary">{bracketRestaurants[6].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[6]} />
           </div>
           <div className="spacer"></div>
           <div className="flex justify-between items-center">
             <PiMedalFill
-              className="text-primary border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
+              className="text-primary mr-2 shrink-0 border border-white bg-background h-5 w-5 hover:cursor-pointer hover:invert hover:bg-magenta hover:ease-in-out transition duration-500"
               onClick={() => setGame4Winner(bracketRestaurants[7])}
             />
             <p className="team text-primary">{bracketRestaurants[7].attributes.name}</p>
+            <RestaurantModal data={bracketRestaurants[7]} />
           </div>
         </div>
       </div>

@@ -63,7 +63,7 @@ export function RestaurantModal({ data }: Props) {
         handleOpenModal();
       }}
     >
-      <BsInfoSquare />
+      <BsInfoSquare className='text-primary h-4 w-4 ml-2 shrink-0'/>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={handleCloseModal}

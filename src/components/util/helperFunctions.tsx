@@ -1,12 +1,5 @@
 import { AiOutlineDollarCircle } from 'react-icons/ai';
-
-export function truncateString(inputString: string) {
-  if (inputString.length > 14) {
-    return inputString.slice(0, 14) + '...';
-  } else {
-    return inputString;
-  }
-}
+import { TacoBell, PizzaPizza, Whopper, ImLovinIt, Subway } from '../../sounds';
 
 export function renderPrice(price: number) {
   if (price === 1) {
@@ -56,5 +49,23 @@ export function renderAddress(address: string, name: string) {
     return <a href={`http://maps.google.com/maps?q=${urlAddress}`} target="_blank" rel="noreferrer"><button className='border border-solid p-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background'>{address}</button></a>
   } else {
     return 'No address data';
+  }
+}
+
+export function playSound(trigger: string) {
+  if (trigger.includes('taco')) {
+    new Audio(TacoBell).play();
+  }
+  if (trigger.includes('pizza')) {
+    new Audio(PizzaPizza).play();
+  }
+  if (trigger.includes('Burger King')) {
+    new Audio(Whopper).play();
+  }
+  if (trigger.includes(`McDonald's`)) {
+    new Audio(ImLovinIt).play();
+  }
+  if (trigger.includes('Subway')) {
+    new Audio(Subway).play();
   }
 }
