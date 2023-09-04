@@ -10,6 +10,7 @@ module.exports = {
       green: "#00ff00",
       magenta: "#ff00ff",
       red: "#ff0000",
+      grey: "#808080",
     },
     extend: {
       animation: {

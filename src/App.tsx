@@ -5,7 +5,6 @@ import SelectMenu from './components/SelectMenu/SelectMenu';
 // import { getData } from './components/apiCalls';
 import ErrorMessage from './components/error';
 
-
 function App() {
   const [error, setError] = useState('');
   const [bracketSize, setBracketSize]: any = useState(0);
@@ -14,8 +13,7 @@ function App() {
   const [readyToPlay, setReadyToPlay]: any = useState(false);
   const [zipCode, setZipCode]: any = useState('');
   const [loading, setLoading] = useState(true);
-  // const [isOpen, isClosed] = useState(false)
-  // Modal useState above
+  
 
   function loadRestaurants(data: object) {
     setFetchedRestaurants(data);
@@ -45,8 +43,8 @@ function App() {
         alt="MunchMadness Title"
         className={
           readyToPlay
-            ? `w-36 items-center absolute top-0 right-0 md:w-72 `
-            : `w-36 items-center absolute top-0 md:w-96`
+            ? `w-36 p-1 items-center absolute top-0 right-0 md:w-72 `
+            : `w-36 p-1 items-center absolute top-0 md:w-72`
         }
       />
       {!bracketSize && (

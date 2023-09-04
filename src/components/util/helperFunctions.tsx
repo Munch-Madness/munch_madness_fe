@@ -1,20 +1,15 @@
-export function truncateString(inputString: string) {
-  if (inputString.length > 20) {
-    return inputString.slice(0, 20) + '...';
-  } else {
-    return inputString;
-  }
-}
+import { AiOutlineDollarCircle } from 'react-icons/ai';
+import { TacoBell, PizzaPizza, Whopper, ImLovinIt, Subway } from '../../sounds';
 
 export function renderPrice(price: number) {
   if (price === 1) {
-    return '$';
+    return <div className='flex'><AiOutlineDollarCircle className='bg-green text-background ml-2 rounded-full' /><AiOutlineDollarCircle /><AiOutlineDollarCircle /><AiOutlineDollarCircle /></div>;
   } else if (price === 2) {
-    return '$$';
+    return <div className='flex'><AiOutlineDollarCircle className='bg-green text-background ml-2 rounded-full' /><AiOutlineDollarCircle className='bg-green text-background rounded-full' /><AiOutlineDollarCircle /><AiOutlineDollarCircle /></div>;
   } else if (price === 3) {
-    return '$$$';
+    return <div className='flex'><AiOutlineDollarCircle className='bg-green text-background ml-2 rounded-full' /><AiOutlineDollarCircle className='bg-green text-background rounded-full' /><AiOutlineDollarCircle className='bg-green text-background rounded-full' /><AiOutlineDollarCircle /></div>;
   } else if (price === 4) {
-    return '$$$$';
+    return <div className='flex'><AiOutlineDollarCircle className='bg-green text-background ml-2 rounded-full' /><AiOutlineDollarCircle className='bg-green text-background rounded-full' /><AiOutlineDollarCircle className='bg-green text-background rounded-full' /><AiOutlineDollarCircle className='bg-green text-background rounded-full' /></div>;
   } else {
     return 'No price data';
   }
@@ -37,10 +32,10 @@ export function renderRating(rating: number) {
 }
 
 export function renderWebsite(website: string) {
-  if (website.length > 0) {
+  if (website?.length > 0) {
     return (
       <a href={website} target="_blank" rel="noreferrer">
-        {website}
+        <button className="border border-solid p-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background">Visit Website</button>
       </a>
     );
   } else {
@@ -48,10 +43,29 @@ export function renderWebsite(website: string) {
   }
 }
 
-export function renderAddress(address: string) {
+export function renderAddress(address: string, name: string) {
+  let urlAddress = `${address.replace(/\s/g, '+')}+${name.replace(/\s/g, '+')}`;
   if (address.length > 0) {
-    return address;
+    return <a href={`http://maps.google.com/maps?q=${urlAddress}`} target="_blank" rel="noreferrer"><button className='border border-solid p-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background'>{address}</button></a>
   } else {
     return 'No address data';
+  }
+}
+
+export function playSound(trigger: string) {
+  if (trigger.includes('taco')) {
+    new Audio(TacoBell).play();
+  }
+  if (trigger.includes('pizza')) {
+    new Audio(PizzaPizza).play();
+  }
+  if (trigger.includes('Burger King')) {
+    new Audio(Whopper).play();
+  }
+  if (trigger.includes(`McDonald's`)) {
+    new Audio(ImLovinIt).play();
+  }
+  if (trigger.includes('Subway')) {
+    new Audio(Subway).play();
   }
 }

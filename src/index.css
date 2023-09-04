@@ -110,3 +110,7 @@ li {
     width: 100%;
   }
 }
+
+.ReactModalPortal {
+  background-color: rgb(0, 31, 7);
+}
