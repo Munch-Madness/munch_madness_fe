@@ -25,7 +25,6 @@ interface Props {
   bracketRestaurants: { attributes: { name: string } }[];
   setBracketRestaurants: Function;
   setReadyToPlay: Function;
-  soundOn: boolean;
 }
 
 function Bracket({
@@ -33,12 +32,12 @@ function Bracket({
   bracketRestaurants,
   setBracketRestaurants,
   setReadyToPlay,
-  soundOn,
 }: Props) {
   const [round2Winners, setRound2Winners]: any = useState([]);
   const [round1Winners, setRound1Winners]: any = useState([]);
   const [round3Winners, setRound3Winners]: any = useState([]);
   const [winner, setWinner]: any = useState('');
+  const [soundOn, setSoundOn] = useState(true);
 
   let sounds = [
     zagLa,
@@ -139,6 +138,12 @@ function Bracket({
 
   return (
     <div className="flex justify-center p-2 h-min md:w-3/5 w-full">
+      <button
+        className="absolute top-1 left-1 border border-solid px-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background"
+        onClick={() => setSoundOn(!soundOn)}
+      >
+        {soundOn ? <p>Mute</p> : <p>Muted</p>}
+      </button>
       {bracketRestaurants.length > 0 ? displayBracket() : 'No Bracket Set'}
     </div>
   );
