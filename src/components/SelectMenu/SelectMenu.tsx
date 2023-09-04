@@ -85,7 +85,6 @@ export default function SelectMenu({
   }
 
   function goBack() {
-    new Audio(zagLa).play();
     setBracketSize(0);
     setBracketRestaurants([]);
   }
