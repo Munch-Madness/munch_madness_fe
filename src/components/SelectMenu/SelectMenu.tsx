@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { zagLa } from '../../sounds';
 
 interface Props {
   fetchedRestaurants: { attributes: { name: string } }[];
@@ -94,6 +95,7 @@ export default function SelectMenu({
   }
 
   function goBack() {
+    new Audio(zagLa).play();
     setBracketSize(0);
     setBracketRestaurants([]);
     setFetchedRestaurants([]);

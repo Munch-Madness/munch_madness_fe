@@ -42,6 +42,8 @@ export function RestaurantModal({ data }: Props) {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      background: '#080808',
+      color: 'white',
     },
   };
 
@@ -55,21 +57,34 @@ export function RestaurantModal({ data }: Props) {
   };
 
   return (
-    <button onClick={() => {handleOpenModal()}}>
-      <BsInfoSquare />
+    <button
+      onClick={() => {
+        handleOpenModal();
+      }}
+    >
+      <BsInfoSquare className='text-primary h-4 w-4 ml-2 shrink-0'/>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={handleCloseModal}
         style={customStyles}
         contentLabel="Restaurant Modal"
       >
-        <button className='absolute top-1 right-1 border border-solid' onClick={handleCloseModal}>X</button>
-        <h2>{data.attributes.name}</h2>
-        <img src={data.attributes.photo} alt={data.attributes.name} />
-        <p>Price: {renderPrice(data.attributes.price)}</p>
-        <p>Rating: {renderRating(data.attributes.rating)}</p>
-        <p>Website: {renderWebsite(data.attributes.website)}</p>
-        <p>Address: {renderAddress(data.attributes.address)}</p>
+        <div className='flex flex-col justify-center text-center'>
+          <button
+            className="absolute top-1 right-1 border border-solid px-1 border-green rounded text-green hover:bg-green hover:text-background hover:border-background transition duration-250"
+            onClick={handleCloseModal}
+          >
+            exit
+          </button>
+          <h2 className='text-2xl pb-2'>{data.attributes.name}</h2>
+          <img src={data.attributes.photo} alt={data.attributes.name} />
+          <div className="flex flex-row justify-between">
+            <p className='flex items-center'>Price: {renderPrice(data.attributes.price)}</p>
+            <p>Rating: {renderRating(data.attributes.rating)}</p>
+          </div>
+          <p className='m-2'>{renderWebsite(data.attributes.website)}</p>
+          <p>{renderAddress(data.attributes.address, data.attributes.name)}</p>
+        </div>
       </Modal>
     </button>
   );

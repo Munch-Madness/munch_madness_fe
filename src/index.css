@@ -9,13 +9,18 @@ body,
   min-height: 100vh;
 }
 .round {
+  width: 50%;
+}
+.future-round {
+  width: 10%;
+}
+.round,
+.future-round {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 90vh;
-  width: 25%;
 }
-
 .matchup-container {
   display: flex;
   flex-direction: column;
@@ -109,4 +114,8 @@ li {
     margin-bottom: 20px;
     width: 100%;
   }
+}
+
+.ReactModalPortal {
+  background-color: rgb(0, 31, 7);
 }
