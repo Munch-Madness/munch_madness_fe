@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { zagLa } from '../../sounds';
 
 interface Props {
   fetchedRestaurants: { attributes: { name: string } }[];
@@ -9,6 +8,11 @@ interface Props {
   bracketSize: number;
   setBracketSize: Function;
   loading: boolean;
+  setFetchedRestaurants: Function;
+  setError: Function;
+  setLoading: Function;
+  bracketMessage: string;
+  setBracketMessage: Function;
 }
 
 export default function SelectMenu({
@@ -19,6 +23,11 @@ export default function SelectMenu({
   bracketSize,
   setBracketSize,
   loading,
+  setFetchedRestaurants,
+  setError,
+  setLoading,
+  bracketMessage,
+  setBracketMessage
 }: Props) {
   const [searchParams, setSearchParams] = useState('');
 
@@ -85,9 +94,12 @@ export default function SelectMenu({
   }
 
   function goBack() {
-    new Audio(zagLa).play();
     setBracketSize(0);
     setBracketRestaurants([]);
+    setFetchedRestaurants([]);
+    setError('');
+    setLoading(true);
+    setBracketMessage('')
   }
 
   function searchRestaurants(event: any) {
@@ -96,7 +108,8 @@ export default function SelectMenu({
 
   return (
     <div className="list">
-      <input
+     {bracketMessage && <p className='text-primary'>{bracketMessage}</p>}
+     <input
         value={searchParams}
         type="text"
         placeholder="Search Restaurants"
