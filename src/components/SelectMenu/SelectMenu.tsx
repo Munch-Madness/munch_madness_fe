@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { zagLa } from '../../sounds';
 
 interface Props {
   fetchedRestaurants: { attributes: { name: string } }[];
