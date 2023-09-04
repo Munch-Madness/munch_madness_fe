@@ -70,7 +70,7 @@ function Bracket({
       price: number;
     };
   }>(null);
-  const [soundOn, setSoundOn] = useState(false);
+  const [soundOn, setSoundOn] = useState(true);
   const [sound, setSound] = useState(
     sounds[Math.floor(Math.random() * sounds.length)]
   );
