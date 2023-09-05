@@ -42,7 +42,8 @@ function App() {
   }, [zipCode, bracketSize]);
 
   useEffect(() => {
-    checkRestaurants(fetchedRestaurants, setBracketSize, setBracketMessage)
+    checkRestaurants(fetchedRestaurants, setBracketSize, setBracketMessage, bracketSize)
+    // eslint-disable-next-line
   }, [fetchedRestaurants])
 
   return (

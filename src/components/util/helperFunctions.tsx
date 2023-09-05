@@ -76,17 +76,34 @@ export const validateZip = (str: string) => {
   return zip.every(num => nums.includes(num))
 }
 
-export function checkRestaurants(fetchedRestaurants: [], setBracketSize: Function, setBracketMessage: Function) {
-  if (fetchedRestaurants.length < 16 && fetchedRestaurants.length >= 8) {
+// export function checkRestaurants(fetchedRestaurants: [], setBracketSize: Function, setBracketMessage: Function) {
+//   if (fetchedRestaurants.length < 16 && fetchedRestaurants.length >= 8) {
+//     setBracketSize(8)
+//     setBracketMessage('sorry your bracket size has been reset to 8 due to lack of restaurants in the area')
+//   } else if (fetchedRestaurants.length < 8 && fetchedRestaurants.length >= 4) {
+//     setBracketSize(4)
+//     setBracketMessage('sorry your bracket size has been reset to 4 due to lack of restaurants in the area')
+//   } else if (fetchedRestaurants.length < 4 && fetchedRestaurants.length >= 2) {
+//     setBracketSize(2)
+//     setBracketMessage('sorry your bracket size has been reset to 2 due to lack of restaurants in the area')
+//   } else if (fetchedRestaurants.length < 2 && fetchedRestaurants.length > 0) {
+//     setBracketMessage('please move to a more popoulated area')
+//   } else if (fetchedRestaurants.length > 16) {
+//     return null
+//   }
+// }
+
+export function checkRestaurants(fetchedRestaurants: [], setBracketSize: Function, setBracketMessage: Function, bracketSize: number) {
+  if (fetchedRestaurants.length < 16 && fetchedRestaurants.length >= 8 && fetchedRestaurants.length < bracketSize) {
     setBracketSize(8)
     setBracketMessage('sorry your bracket size has been reset to 8 due to lack of restaurants in the area')
-  } else if (fetchedRestaurants.length < 8 && fetchedRestaurants.length >= 4) {
+  } else if (fetchedRestaurants.length < 8 && fetchedRestaurants.length >= 4 && fetchedRestaurants.length < bracketSize) {
     setBracketSize(4)
     setBracketMessage('sorry your bracket size has been reset to 4 due to lack of restaurants in the area')
-  } else if (fetchedRestaurants.length < 4 && fetchedRestaurants.length >= 2) {
+  } else if (fetchedRestaurants.length < 4 && fetchedRestaurants.length >= 2 && fetchedRestaurants.length < bracketSize) {
     setBracketSize(2)
     setBracketMessage('sorry your bracket size has been reset to 2 due to lack of restaurants in the area')
-  } else if (fetchedRestaurants.length < 2 && fetchedRestaurants.length > 0) {
+  } else if (fetchedRestaurants.length < 2 && fetchedRestaurants.length > 0 && fetchedRestaurants.length < bracketSize) {
     setBracketMessage('please move to a more popoulated area')
   } else if (fetchedRestaurants.length > 16) {
     return null
