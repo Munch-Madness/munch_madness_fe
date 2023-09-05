@@ -124,10 +124,10 @@ To test our application:
 1. Install Cypress 
 
  Using npm
-`npm install cypress --save-dev`
+  * `npm install cypress --save-dev`
 
  Using yarn
-`yarn add cypress --dev`
+  * `yarn add cypress --dev`
 
 2. npm run cypress command will allow you to run test on the app.
 ---
