@@ -45,7 +45,14 @@ export default function SelectMenu({
   }
 
   const arrangeRestaurants = () => {
-    
+    const bracketNames = bracketRestaurants.map(restaurant => restaurant.attributes.name)
+    const filteredRestaurants = fetchedRestaurants.filter(rest => {
+      return !bracketNames.includes(rest.attributes.name)
+    })
+    const sortedBracket = bracketRestaurants.sort(sortRestaurants)
+    const sortedFetched = filteredRestaurants.sort(sortRestaurants)
+  console.log(sortedFetched.map(index => index.attributes.name))
+  return [...sortedBracket, ...filteredRestaurants]
   }
 
   const restaurantOptions = searchParams
@@ -56,7 +63,7 @@ export default function SelectMenu({
             .includes(searchParams.toLowerCase())
         )
         .sort()
-    : bracketRestaurants.length ? fetchedRestaurants.sort() : fetchedRestaurants.sort(sortRestaurants);
+    : bracketRestaurants.length ? arrangeRestaurants() : fetchedRestaurants.sort(sortRestaurants);
   const displayRestaurants = restaurantOptions.map((restaurant, index) => (
     <li key={index} className="flex justify-between py-1 cursor-pointer">
       {restaurant.attributes.name}{' '}
