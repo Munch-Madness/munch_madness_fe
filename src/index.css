@@ -69,14 +69,18 @@ body,
   height: 400px;
   overflow-y: scroll;
   width: 100%;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 0 7px;
 }
 
 li {
   border: 1px solid grey;
   border-radius: 3px;
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 0 5px;
-  width: 99%;
+  width: 100%;
+  /* padding-left: px; */
 }
 
 .list {
