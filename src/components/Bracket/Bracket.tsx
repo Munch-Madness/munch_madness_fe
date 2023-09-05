@@ -4,13 +4,13 @@ import Eight from '../BracketCards/Eight';
 import Four from '../BracketCards/Four';
 import Two from '../BracketCards/Two';
 import {
-  zagLa,
   andOne,
+  BringsItHome,
   ColdBlooded,
   DoubleOT,
   HeartBreakCity,
   Holloway,
-  JeromePt2,
+  AtTheBuzzer,
   SendItJerome,
   Oh,
   Miracles,
@@ -18,6 +18,9 @@ import {
   SlipperStillFits,
   ThisIsMarchMadness,
   Unbelievable,
+  GottaHurry,
+  YouCantBeSerious,
+  Bang,
 } from '../../sounds';
 import useSound from 'use-sound';
 import {
@@ -35,13 +38,15 @@ interface Props {
 }
 
 const sounds = [
-  zagLa,
   andOne,
+  AtTheBuzzer,
+  Bang,
+  BringsItHome,
+  GottaHurry,
   ColdBlooded,
   DoubleOT,
   HeartBreakCity,
   Holloway,
-  JeromePt2,
   SendItJerome,
   Oh,
   Miracles,
@@ -49,6 +54,7 @@ const sounds = [
   SlipperStillFits,
   ThisIsMarchMadness,
   Unbelievable,
+  YouCantBeSerious,
 ];
 
 function Bracket({
