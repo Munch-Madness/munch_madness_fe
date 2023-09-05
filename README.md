@@ -68,11 +68,15 @@ Github repositories:
 
 * [![Ruby][Ruby]][Ruby-url]
 * [![Rails][Rails]][Rails-url]
-* [React][React-url]
-* [![Tailwind][Tailwind]][Tailwind-url]
 * [![Postgres][Postgres]][Postgres-url]
 * [![Heroku][Heroku]][Heroku-url]
 * [![CircleCI][CircleCI]][CircleCI-url]
+* ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+* [![Tailwind][Tailwind]][Tailwind-url]
+* [![ReactJs][ReactJs]][ReactJs-url]
+* [![TS][TS]][TS-url]
+* ![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=for-the-badge&logo=github&logoColor=white)
+* ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 Munch Madness uses these integrations:
 * [Google Places API](https://developers.google.com/maps/documentation/places/web-service/overview)
@@ -83,8 +87,7 @@ Munch Madness uses these integrations:
 
 [FE repo](https://github.com/Munch-Madness/munch_madness_fe) <br>
 [DB schema](https://dbdesigner.page.link/UGcXsAniT1vJ812M6) <br>
-[Wireframes](/public/assets/MunchMadness.PNG) <br>
-[Wireframes](https://www.canva.com/design/DAFsSBRgGTE/gNAdr2pdnqz-cZFXEYKXsw/edit) 
+[Wireframe](https://www.canva.com/design/DAFsSBRgGTE/gNAdr2pdnqz-cZFXEYKXsw/edit) 
 
 
 ## Project Contributor Contact Info
@@ -151,44 +154,47 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[andy-gh-url]: https://github.com/andyweissman6
-[andy-li-url]: https://www.linkedin.com/in/andy-weissman/
-[CircleCI]: https://img.shields.io/badge/circleci-343434?style=for-the-badge&logo=circleci&logoColor=white
-[CircleCI-url]: https://circleci.com/
 [contributors-shield]: https://img.shields.io/github/contributors/Munch-Madness/munch_madness_be.svg?style=for-the-badge
 [contributors-url]: https://github.com/Munch-Madness/munch_madness_be/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Munch-Madness/munch_madness_be.svg?style=for-the-badge
 [forks-url]: https://github.com/Munch-Madness/munch_madness_be/network/members
-[Github]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
-[Heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
-[Heroku-url]: https://devcenter.heroku.com/articles/getting-started-with-rails7
-[isaiah-gh-url]: https://github.com/CapCinematic
-[isaiah-li-url]: https://www.linkedin.com/in/
-[issues-shield]: https://img.shields.io/github/issues/Munch-Madness/munch_madness_be.svg?style=for-the-badge
-[issues-url]: https://github.com/Munch-Madness/munch_madness_be/issues
-[jeff-gh-url]: https://github.com/Jredish11
-[jeff-li-url]: https://www.linkedin.com/in/jredish/
-[lauren-gh-url]: https://github.com/goldenll
-[lauren-li-url]: https://www.linkedin.com/in/goldenll/
-[license-shield]: https://img.shields.io/github/license/Munch-Madness/munch_madness_be.svg?style=for-the-badge
-[license-url]: https://github.com/Munch-Madness/munch_madness_be/blob/main/LICENSE.txt
-[Postgres]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
-[Postgres-url]: https://www.postgresql.org/
-[project-be-gh-url]: https://github.com/Munch-Madness/munch_madness_be
-[project-fe-gh-url]: https://github.com/Munch-Madness/munch_madness_fe
-[race-gh-url]: https://github.com/RaceOsuna
-[race-li-url]: https://www.linkedin.com/in/raceosuna/
-[Rails]: https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white
-[Rails-url]: https://rubyonrails.org/
-[Ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white
-[Ruby-url]: https://www.ruby-lang.org/en/
-[seth-gh-url]: https://github.com/SethBurns
-[seth-li-url]: https://www.linkedin.com/in/seth-burns-aa339bba/
 [stars-shield]: https://img.shields.io/github/stars/Munch-Madness/munch_madness_be.svg?style=for-the-badge
 [stars-url]: https://github.com/Munch-Madness/munch_madness_be/stargazers
-[stilmock-gh-url]: https://github.com/AStilmock
+[issues-shield]: https://img.shields.io/github/issues/Munch-Madness/munch_madness_be.svg?style=for-the-badge
+[issues-url]: https://github.com/Munch-Madness/munch_madness_be/issues
+[license-shield]: https://img.shields.io/github/license/Munch-Madness/munch_madness_be.svg?style=for-the-badge
+[license-url]: https://github.com/Munch-Madness/munch_madness_be/blob/main/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[lauren-li-url]: https://www.linkedin.com/in/goldenll/
+[jeff-li-url]: https://www.linkedin.com/in/jredish/
 [stilmock-li-url]: https://www.linkedin.com/in/andrew-stilmock-9ba598270/
+[andy-li-url]: https://www.linkedin.com/in/andy-weissman/
+[seth-li-url]: https://www.linkedin.com/in/seth-burns-aa339bba/
+[isaiah-li-url]: https://www.linkedin.com/in/
+[race-li-url]: https://www.linkedin.com/in/raceosuna/
+[Github]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[project-fe-gh-url]: https://github.com/Munch-Madness/munch_madness_fe
+[project-be-gh-url]: https://github.com/Munch-Madness/munch_madness_be
+[jeff-gh-url]: https://github.com/Jredish11
+[lauren-gh-url]: https://github.com/goldenll
+[andy-gh-url]: https://github.com/andyweissman6
+[stilmock-gh-url]: https://github.com/AStilmock
+[seth-gh-url]: https://github.com/SethBurns
+[isaiah-gh-url]: https://github.com/CapCinematic
+[race-gh-url]: https://github.com/RaceOsuna
+[Ruby]: https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white
+[Ruby-url]: https://www.ruby-lang.org/en/
 [Tailwind]: https://img.shields.io/badge/Tailwind-191970?style=for-the-badge&logo=tailwindcss&logoColor=white
 [Tailwind-url]: https://tailwindcss.com/
-[React-url]: https://react.dev/
+[Rails]: https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white
+[Rails-url]: https://rubyonrails.org/
+[Postgres]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
+[Heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
+[Heroku-url]: https://devcenter.heroku.com/articles/getting-started-with-rails7
+[CircleCI]: https://img.shields.io/badge/circleci-343434?style=for-the-badge&logo=circleci&logoColor=white
+[CircleCI-url]: https://circleci.com/
+[ReactJs]: https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge
+[ReactJs-url]: https://react.dev/
+[TS]: https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square
+[TS-url]: https://www.typescriptlang.org/
