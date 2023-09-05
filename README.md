@@ -106,7 +106,6 @@ Munch Madness uses these integrations:
 
 - Fork and clone this repo
 - Install dependencies by running npm install in the root directory
-- Run `rails db:{create,migrate,seed}`
 - Start the development server by running `npm start`
   The application should now be running on `http://localhost:3000`.
 
@@ -122,12 +121,12 @@ Munch Madness uses these integrations:
 For the FE testing of this app we used Cypress, a JavaScript end-to-end testing framework that makes it easy to write and run automated tests for your web applications. With Cypress, you can write tests that simulate user interactions with your application, such as clicking buttons, filling out forms, and navigating between pages.
 
 To test our application:
-1. Install Cypress: 
+1. Install Cypress 
 
-# Using npm
+ Using npm
 `npm install cypress --save-dev`
 
-# Using yarn
+ Using yarn
 `yarn add cypress --dev`
 
 2. npm run cypress command will allow you to run test on the app.
