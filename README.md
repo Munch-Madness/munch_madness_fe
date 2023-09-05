@@ -83,10 +83,10 @@ Munch Madness uses these integrations:
 
 
 
-<!-- [FE repo](https://github.com/Munch-Madness/munch_madness_fe) <br>
+[FE repo](https://github.com/Munch-Madness/munch_madness_fe) <br>
 [DB schema](https://dbdesigner.page.link/UGcXsAniT1vJ812M6) <br>
-[Wireframes](https://excalidraw.com/#room=0a8c57ccd8f323dba626,Nt3xSlQIHFl0G-KbKim0QA) <br>
-[Wireframes](https://www.canva.com/design/DAFsSBRgGTE/gNAdr2pdnqz-cZFXEYKXsw/edit)  -->
+[Wireframes](/public/assets/MunchMadness.PNG) <br>
+[Wireframes](https://www.canva.com/design/DAFsSBRgGTE/gNAdr2pdnqz-cZFXEYKXsw/edit) 
 
 
 ## Project Contributor Contact Info
