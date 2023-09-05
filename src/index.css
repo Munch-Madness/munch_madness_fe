@@ -93,6 +93,10 @@ li {
   height: 75vh;
 }
 
+.select-btn {
+  width: 110px;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   background-color: grey;
@@ -112,13 +116,16 @@ li {
 
 @media screen and (max-width: 768px) {
   .list {
-    width: 320px;
+    /* width: 320px; */
+    width: 95vw;
     margin-top:10px;
   }
 
   .search {
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 20px;
-    width: 100%;
+    width: 75%;
   }
 }
 

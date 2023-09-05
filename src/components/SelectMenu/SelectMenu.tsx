@@ -114,22 +114,28 @@ export default function SelectMenu({
         value={searchParams}
         type="text"
         placeholder="Search Restaurants"
-        className="h-10 pl-2 -mb-10 z-10 rounded-lg text-lg search"
+        className="h-10 pl-2 mb-5 z-10 rounded-lg text-lg search"
         onChange={searchRestaurants}
       ></input>
       <div className="flex justify-between w-full self-start mb-5">
         <button
-          className="text-green text-lg p-2 border rounded-lg hover:bg-green hover:text-background transition duration-250"
+          className="text-green text-lg p-2 border rounded-lg select-btn hover:bg-green hover:text-background transition duration-250"
           onClick={goBack}
         >
           Go Back
         </button>
-        <button
-          className="text-green text-lg border p-2 rounded-lg hover:bg-green hover:text-background transition duration-250"
-          onClick={random}
-        >
-          Randomize
-        </button>
+          <button
+            className="text-green text-lg border p-2 rounded-lg select-btn clear hover:bg-green hover:text-background transition duration-250"
+            onClick={() => setBracketRestaurants([])}
+          >
+            Clear
+          </button>
+          <button
+            className="text-green text-lg border p-2 rounded-lg select-btn hover:bg-green hover:text-background transition duration-250"
+            onClick={random}
+          >
+            Randomize
+          </button>
       </div>
       {bracketRestaurants.length !== bracketSize && (
         <p className="text-primary mb-5 self-start red">
