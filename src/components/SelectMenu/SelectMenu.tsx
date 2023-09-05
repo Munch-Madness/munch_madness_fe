@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sortRestaurants, arrangeRestaurants } from '../util/helperFunctions';
 
 interface Props {
   fetchedRestaurants: { attributes: { name: string } }[];
@@ -31,30 +32,6 @@ export default function SelectMenu({
 }: Props) {
   const [searchParams, setSearchParams] = useState('');
 
-  const sortRestaurants = (a: any, b: any) => {
-    const nameA = a.attributes.name.toLowerCase();
-    const nameB = b.attributes.name.toLowerCase();
-  
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-    return 0;
-  }
-
-  const arrangeRestaurants = () => {
-    const bracketNames = bracketRestaurants.map(restaurant => restaurant.attributes.name)
-    const filteredRestaurants = fetchedRestaurants.filter(rest => {
-      return !bracketNames.includes(rest.attributes.name)
-    })
-    const sortedBracket = bracketRestaurants.sort(sortRestaurants)
-    const sortedFetched = filteredRestaurants.sort(sortRestaurants)
-  console.log(sortedFetched.map(index => index.attributes.name))
-  return [...sortedBracket, ...filteredRestaurants]
-  }
-
   const restaurantOptions = searchParams
     ? fetchedRestaurants
         .filter((restaurant, index) =>
@@ -63,7 +40,7 @@ export default function SelectMenu({
             .includes(searchParams.toLowerCase())
         )
         .sort()
-    : bracketRestaurants.length ? arrangeRestaurants() : fetchedRestaurants.sort(sortRestaurants);
+    : bracketRestaurants.length ? arrangeRestaurants(bracketRestaurants, fetchedRestaurants) : fetchedRestaurants.sort(sortRestaurants);
   const displayRestaurants = restaurantOptions.map((restaurant, index) => (
     <li key={index} className="flex justify-between py-1 cursor-pointer">
       {restaurant.attributes.name}{' '}

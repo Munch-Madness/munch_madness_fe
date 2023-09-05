@@ -76,23 +76,6 @@ export const validateZip = (str: string) => {
   return zip.every(num => nums.includes(num))
 }
 
-// export function checkRestaurants(fetchedRestaurants: [], setBracketSize: Function, setBracketMessage: Function) {
-//   if (fetchedRestaurants.length < 16 && fetchedRestaurants.length >= 8) {
-//     setBracketSize(8)
-//     setBracketMessage('sorry your bracket size has been reset to 8 due to lack of restaurants in the area')
-//   } else if (fetchedRestaurants.length < 8 && fetchedRestaurants.length >= 4) {
-//     setBracketSize(4)
-//     setBracketMessage('sorry your bracket size has been reset to 4 due to lack of restaurants in the area')
-//   } else if (fetchedRestaurants.length < 4 && fetchedRestaurants.length >= 2) {
-//     setBracketSize(2)
-//     setBracketMessage('sorry your bracket size has been reset to 2 due to lack of restaurants in the area')
-//   } else if (fetchedRestaurants.length < 2 && fetchedRestaurants.length > 0) {
-//     setBracketMessage('please move to a more popoulated area')
-//   } else if (fetchedRestaurants.length > 16) {
-//     return null
-//   }
-// }
-
 export function checkRestaurants(fetchedRestaurants: [], setBracketSize: Function, setBracketMessage: Function, bracketSize: number) {
   if (fetchedRestaurants.length < 16 && fetchedRestaurants.length >= 8 && fetchedRestaurants.length < bracketSize) {
     setBracketSize(8)
@@ -108,4 +91,29 @@ export function checkRestaurants(fetchedRestaurants: [], setBracketSize: Functio
   } else if (fetchedRestaurants.length > 16) {
     return null
   }
+}
+// sort functions
+
+export const sortRestaurants = (a: {attributes: {name: string}}, b: {attributes: {name: string}}) => {
+  const nameA = a.attributes.name.toLowerCase();
+  const nameB = b.attributes.name.toLowerCase();
+
+  if (nameA < nameB) {
+    return -1;
+  }
+  if (nameA > nameB) {
+    return 1;
+  }
+  return 0;
+}
+
+export const arrangeRestaurants = (bracketRestaurants: {attributes: {name: string}}[], fetchedRestaurants: {attributes: {name: string}}[]) => {
+  const bracketNames = bracketRestaurants.map(restaurant => restaurant.attributes.name)
+  const filteredRestaurants = fetchedRestaurants.filter(rest => {
+    return !bracketNames.includes(rest.attributes.name)
+  })
+  const sortedBracket = bracketRestaurants.sort(sortRestaurants)
+  const sortedFetched = filteredRestaurants.sort(sortRestaurants)
+console.log(sortedFetched.map(index => index.attributes.name))
+return [...sortedBracket, ...filteredRestaurants]
 }
