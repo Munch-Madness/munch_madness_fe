@@ -118,10 +118,18 @@ Munch Madness uses these integrations:
 
 <!-- Testing -->
 ## Testing
+For the FE testing of this app we used Cypress, a JavaScript end-to-end testing framework that makes it easy to write and run automated tests for your web applications. With Cypress, you can write tests that simulate user interactions with your application, such as clicking buttons, filling out forms, and navigating between pages.
 
-`bundle exec rspec` will run the entire test suite. *All tests passing at time of writing.*
+To test our application:
+1. Install Cypress: 
 
+# Using npm
+npm install cypress --save-dev
 
+# Using yarn
+yarn add cypress --dev
+
+2. npm run cypress command will allow you to run test on the app.
 ---
 [Back to Top](#readme-top)
 
