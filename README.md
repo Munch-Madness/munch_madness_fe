@@ -145,8 +145,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 
-<img src="munch-madness-logo-k.png" alt="Logo" width="400" height="200" margin="0">
-
 [Back to Top](#readme-top)
 
 <!-- CONTACT -->
