@@ -22,7 +22,7 @@
 <h3 align="center">Munch Madness</h3>
 
   <p align="center">
-    Welcome to the repository for Munch Madness!
+    Welcome to the FE repository for Munch Madness!
     Munch Madness is a web application built for the Turing School of Software and Design's Mod 4 Captsone project. Read more about project requirements: https://mod4.turing.edu/projects/capstone/
   </p>
 </div>
@@ -43,8 +43,6 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
     </li>
     <li><a href="#testing">Testing</a></li>
-    <li><a href="#api-json-contract">API JSON Contract</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#license">License</a></li>
   </ol>
 </details>
@@ -57,7 +55,7 @@ Munch Madness stands out from other apps by combining the enjoyment of NCAA Marc
 Munch Madness gamifies the process of deciding where to eat or order takeout. Using a tournament-style bracket (1 vs 16, 2 vs 15, 3 vs 14, all the way 8v9 etc.) users can select up to 16 restaurants(based on location) and vote on a winner of each restaurant matchup. The winning restaurant advances to the next round until a final champion is crowned. With the ability to invite friends and engage in friendly competitions, Munch Madness takes the hassle out of choosing where to eat and transforms it into a fun and social experience. <b>This app helps people create their own culinary Cinderella Story!</b>
 <br><br>
 
-Our Production Site is available [here](https://munch-madness-ewdwpr2d4-munchmadness.vercel.app/)
+Our Full Production Site is available [here](https://munch-madness-ewdwpr2d4-munchmadness.vercel.app/)
 
 Github repositories:
 * Front End: [![Github][Github]][project-fe-gh-url]
@@ -113,7 +111,7 @@ Munch Madness uses these integrations:
 
 * Node.js 
 * npm (Node Package Manager) 
-* After installing Node.js and npm, you can install the project dependencies by running the command npm install in the root directory of the cloned repository.
+* After installing Node.js and npm, you can install the project dependencies by running the command `npm install` in the root directory of the cloned repository.
 
 
 <!-- Testing -->
@@ -124,136 +122,19 @@ To test our application:
 1. Install Cypress: 
 
 # Using npm
-npm install cypress --save-dev
+`npm install cypress --save-dev`
 
 # Using yarn
-yarn add cypress --dev
+`yarn add cypress --dev`
 
 2. npm run cypress command will allow you to run test on the app.
 ---
 [Back to Top](#readme-top)
 
 
-# API JSON Contract
+# Please Check Out Our BE Repo
 
-Description of API endpoints for front end application
-
-### GETting a place via query parameter
-
-`GET /api/v1/places/search`
-
-postman request url:  http://localhost:3000/api/v1/places/search?query={restaurant} <br>
-(while running rails s in terminal)<br>
-heroku request url: https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/search?query={restaurant} <br>
-
-Success Response (200 OK):
-
-- Status: 200 OK
-- Description: Successful response with a specific place's name and photo based on a users input query.
-- Data Format: A data array, with keys "id", "type" and "attributes".
-```json
-{
-    "data": {
-        "id": "null",
-    "type": "place",
-    "attributes": {
-        "name": "Crown Burgers",
-      "photo": "https://images.app.goo.gl/brHvUtTzH2wBfBq77",
-      "price": 2, 
-      "rating": 4.9
-    }
-  }
-}
-```
-
-Error Response (404 Not Found):
-
-- Description: The requested place was not found.
-- Data Format: Error message for human.
-- Status: 404 Not Found
-```
-no restaurants located with search query
-
-```
-### GETting a list of 20 places based on zipcode
-
-`GET /api/v1/places/`
-<br>postman url request: http://localhost:3000/api/v1/places/?query={zipcode}&search=random
-<br>
-(while running rails s in terminal)<br>
-heroku request url: https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/?query={zipcode}&search=random <br>
-
-
-Success Response (200 OK):
-
-- Status: 200 OK
-- Description: Successful response with list of place objects based on a user input zipcode query.
-- Data Format: A data array, with keys "id", "type" and "attributes".
-```json
-{
-    "data": [
-        {
-            "id": "null",
-            "type": "place",
-            "attributes": {
-                "name": "Casa Bonita",
-                "photo": "https://lh3.googleusercontent.com/places/ANJU3DtrdH49oLIRYy0lNaYPvYK3J1UIy8d4Efhsc5yRUPQikZHHqCVWiAwmxzPiIIgiwmDyeSAJEWzBXsd26iwsHBncCdiiT9D-aZU=s1600-w400",
-                "price": 2, 
-                "rating": 3.5
-            }
-        },
-        {
-            "id": "null",
-            "type": "place",
-            "attributes": {
-                "name": "Strange Craft Beer Company",
-                "photo": "https://lh3.googleusercontent.com/places/ANJU3Dtgj7bj3zxEjB1tkkh26Ay-w9kav5J6vEeoP6vaVW2dJMc51o6If9yl5PzOhfHaOFvdGok3uTOz7AucKNqnj_2g00uoADtRYGM=s1600-w400",
-                "price": 1, 
-                "rating": 4.8
-            }
-        },
-        {
-            "id": "null",
-            "type": "place",
-            "attributes": {
-                "name": "El Tapatio Mexican Restaurant",
-                "photo": "https://lh3.googleusercontent.com/places/ANJU3DsAjWEedU0nZS2WamUtAxrZ8ULozGUPidDJvesUbabdPnHcQizivbLjD3RTc3IXWNVBwrI5nqwi77-7N-xPswx6V5oR6wnkymg=s1600-w400",
-                "price": 1, 
-                "rating": 4.6
-            }
-        },
-        {
-            "id": "null",
-            "type": "place",
-            "attributes": {
-                "name": "Olive Garden Italian Restaurant",
-                "photo": "https://lh3.googleusercontent.com/places/ANJU3DtatEfy9h7LCUS-s90hqmZHQ2V5ovmJqR8BwQvvPHZ4z1TMZY9Kg8ZI7C8AigAgoj4NY4dsBpg81U9YND63yYr4SUHYipfImKA=s1600-w400",
-                "price": 2, 
-                "rating": 4.1
-            }
-        }
-    ]
-}
-```
-
-Error Response (404 Not Found):
-
-- Description: The requested location was not found.
-- Data Format: Error message for human.
-- Status: 404 Not Found
-```
-location could not be found
-```
-
-<!-- Roadmap -->
-## Roadmap
-Additional features, functionality, and potential refactors:
-  * Add the ability to create a link to share with friends so people can vote on their own phones
-  * Letting user's save brackets 
-  * Adding more fields for restaurant information, seeding logic
-  * Voting feature so multiple can vote on each matchup for a created bracket
-
-
+Back End:  [![Github][Github]][project-be-gh-url]
 
 <!-- LICENSE -->
 ## License
