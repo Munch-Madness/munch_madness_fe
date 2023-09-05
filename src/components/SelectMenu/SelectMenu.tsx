@@ -31,6 +31,23 @@ export default function SelectMenu({
 }: Props) {
   const [searchParams, setSearchParams] = useState('');
 
+  const sortRestaurants = (a: any, b: any) => {
+    const nameA = a.attributes.name.toLowerCase();
+    const nameB = b.attributes.name.toLowerCase();
+  
+    if (nameA < nameB) {
+      return -1;
+    }
+    if (nameA > nameB) {
+      return 1;
+    }
+    return 0;
+  }
+
+  const arrangeRestaurants = () => {
+    
+  }
+
   const restaurantOptions = searchParams
     ? fetchedRestaurants
         .filter((restaurant, index) =>
@@ -39,7 +56,7 @@ export default function SelectMenu({
             .includes(searchParams.toLowerCase())
         )
         .sort()
-    : fetchedRestaurants.sort();
+    : bracketRestaurants.length ? fetchedRestaurants.sort() : fetchedRestaurants.sort(sortRestaurants);
   const displayRestaurants = restaurantOptions.map((restaurant, index) => (
     <li key={index} className="flex justify-between py-1 cursor-pointer">
       {restaurant.attributes.name}{' '}
