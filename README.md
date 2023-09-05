@@ -57,7 +57,7 @@ Munch Madness stands out from other apps by combining the enjoyment of NCAA Marc
 Munch Madness gamifies the process of deciding where to eat or order takeout. Using a tournament-style bracket (1 vs 16, 2 vs 15, 3 vs 14, all the way 8v9 etc.) users can select up to 16 restaurants(based on location) and vote on a winner of each restaurant matchup. The winning restaurant advances to the next round until a final champion is crowned. With the ability to invite friends and engage in friendly competitions, Munch Madness takes the hassle out of choosing where to eat and transforms it into a fun and social experience. <b>This app helps people create their own culinary Cinderella Story!</b>
 <br><br>
 
-Our Production Site is available [here](https://munch-madness-fe-8b56c3719f5f.herokuapp.com/)    #need to fix this URL later
+Our Production Site is available [here](https://munch-madness-ewdwpr2d4-munchmadness.vercel.app/)
 
 Github repositories:
 * Front End: [![Github][Github]][project-fe-gh-url]
@@ -90,13 +90,13 @@ Munch Madness uses these integrations:
 
 
 ## Project Contributor Contact Info
+* Seth Burns [![Linkedin][Linkedin-shield]][seth-li-url] [![Github][Github]][seth-gh-url]
+* Isaiah Richardson [![Linkedin][Linkedin-shield]][isaiah-li-url] [![Github][Github]][isaiah-gh-url]
+* Race Osuna [![Linkedin][Linkedin-shield]][race-li-url] [![Github][Github]][race-gh-url]
 * Lauren Golden: [![Linkedin][Linkedin-shield]][lauren-li-url] [![Github][Github]][lauren-gh-url]
 * Andy Weissman [![Linkedin][Linkedin-shield]][andy-li-url] [![Github][Github]][andy-gh-url]
 * Jeff Redish:   [![Linkedin][Linkedin-shield]][jeff-li-url] [![Github][Github]][jeff-gh-url]
 * Andy Stilmock [![Linkedin][Linkedin-shield]][stilmock-li-url] [![Github][Github]][stilmock-gh-url]
-* Seth Burns [![Linkedin][Linkedin-shield]][seth-li-url] [![Github][Github]][seth-gh-url]
-* Isaiah Richardson [![Linkedin][Linkedin-shield]][isaiah-li-url] [![Github][Github]][isaiah-gh-url]
-* Race Osuna [![Linkedin][Linkedin-shield]][race-li-url] [![Github][Github]][race-gh-url]
 
 
 ## Getting Started
@@ -104,14 +104,16 @@ Munch Madness uses these integrations:
   <h3> How to install the project?</h3>
 
 - Fork and clone this repo
-- Run `bundle install`
+- Install dependencies by running npm install in the root directory
 - Run `rails db:{create,migrate,seed}`
-- User will need to sign up for a Places API key and create account [here](https://developers.google.com/maps/documentation/places/web-service/overview)
-- Use `bundle exec rspec` to run the test suite
+- Start the development server by running `npm start`
+  The application should now be running on `http://localhost:3000`.
+
 ### Prerequisites
 
-* ruby 3.2.2
-* Rails Version 7.0.6
+* Node.js 
+* npm (Node Package Manager) 
+* After installing Node.js and npm, you can install the project dependencies by running the command npm install in the root directory of the cloned repository.
 
 
 <!-- Testing -->

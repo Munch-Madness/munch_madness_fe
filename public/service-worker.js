@@ -10,23 +10,23 @@ self.addEventListener('install', (event ) => {
   )
 })
 
-// self.addEventListener('fetch', (event ) => {
-//   event.respondWith(
-//     caches.match(event.request).then((response ) => {
-//       if (response) {
-//         return response
-//       } 
-//       return fetch(event.request)
-//       .then((response ) => {
-//         const responseClone = response.clone()
-//         caches.open(MunchMadnessCache).then((cache ) => {
-//           cache.put(event.request, responseClone)
-//         })
-//         return response
-//       })
-//     })
-//   )
-// })
+self.addEventListener('fetch', (event ) => {
+  event.respondWith(
+    caches.match(event.request).then((response ) => {
+      if (response) {
+        return response
+      } 
+      return fetch(event.request)
+      .then((response ) => {
+        const responseClone = response.clone()
+        caches.open(MunchMadnessCache).then((cache ) => {
+          cache.put(event.request, responseClone)
+        })
+        return response
+      })
+    })
+  )
+})
 
 self.addEventListener('activate', () => {
   caches.keys().then(keys => {
