@@ -198,3 +198,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [ReactJs-url]: https://react.dev/
 [TS]: https://shields.io/badge/TypeScript-3178C6?logo=TypeScript&logoColor=FFF&style=flat-square
 [TS-url]: https://www.typescriptlang.org/
+
+# At A Glance
+
+![Enter A ZipCode](/public/assets/zipcode.png)
+
+![Select Your Restuarants](/public/assets/Selected.png)
+
+![Play Through Your Bracket](/public/assets/Bracket.png)
+
+![Reach Your Winner!](/public/assets/PetesWinner.png)
