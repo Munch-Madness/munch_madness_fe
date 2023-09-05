@@ -119,6 +119,11 @@ li {
     /* width: 320px; */
     width: 95vw;
     margin-top:10px;
+    /* height:80%; */
+  }
+
+  .select {
+    height: 80vh;
   }
 
   .search {
