@@ -69,14 +69,18 @@ body,
   height: 400px;
   overflow-y: scroll;
   width: 100%;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 0 7px;
 }
 
 li {
   border: 1px solid grey;
   border-radius: 3px;
-  margin: 5px 0;
+  margin: 10px 0;
   padding: 0 5px;
-  width: 99%;
+  width: 100%;
+  /* padding-left: px; */
 }
 
 .list {
@@ -85,7 +89,12 @@ li {
   width: 750px;
   /* min-width: 320px; */
   align-items: center;
-  margin-top: 5%;
+  margin-top: 150px;
+  height: 75vh;
+}
+
+.select-btn {
+  width: 110px;
 }
 
 ::-webkit-scrollbar {
@@ -107,12 +116,21 @@ li {
 
 @media screen and (max-width: 768px) {
   .list {
-    width: 320px;
+    /* width: 320px; */
+    width: 95vw;
+    margin-top:10px;
+    /* height:80%; */
+  }
+
+  .select {
+    height: 80vh;
   }
 
   .search {
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 20px;
-    width: 100%;
+    width: 75%;
   }
 }
 
