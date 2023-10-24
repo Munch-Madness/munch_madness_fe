@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     if (zipCode.length === 5 && bracketSize) {
       fetch(
-        `https://munch-madness-be-8b56c3719f5f.herokuapp.com/api/v1/places/?query=${zipCode}&search=random`
+        `https://munch-madness-be.onrender.com/api/v1/places?query=${zipCode}&search=random`
       )
         .then((response) => {
           if (!response.ok) {
